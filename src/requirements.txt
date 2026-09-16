@@ -594,9 +594,9 @@ cycler==0.12.1 \
     --hash=sha256:85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30 \
     --hash=sha256:88bb128f02ba341da8ef447245a9e138fae777f6a23943da4540077d3601eb1c
     # via matplotlib
-databricks-sdk==0.110.0 \
-    --hash=sha256:8a23db05be7a304bea43b4fa78b437051ed0f3755b19594429c649ee4159b546 \
-    --hash=sha256:b62d806982b37f8160f700d657c37b3bd586c649eb5c8c4c1216090d888c5820
+databricks-sdk==0.137.0 \
+    --hash=sha256:03e89202f9f4bfd6004f76284c9e54fb14533566d8041f6ee7484c42a1a412e8 \
+    --hash=sha256:33c995a36ccfd0e59ae16abe08eb129bf53218647e1549e8b9a6f4abbd12bf68
     # via
     #   -r src/backend/requirements.in
     #   mlflow-skinny
@@ -3070,6 +3070,7 @@ urllib3==2.6.3 \
     --hash=sha256:1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed \
     --hash=sha256:bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4
     # via
+    #   databricks-sdk
     #   databricks-sql-connector
     #   docker
     #   requests
