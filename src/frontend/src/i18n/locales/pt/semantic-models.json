@@ -1,0 +1,64 @@
+{
+  "rebuildGraph": "Reconstruir Grafo",
+  "rebuildingGraph": "Reconstruindo...",
+  "rebuildGraphTooltip": "Recarregar ontologias, fontes implícitas e objetos do aplicativo para que tudo seja consultável.",
+  "title": "Navegador de Conceitos",
+  "subtitle": "Gerencie glossários de negócios e definições semânticas",
+  "newModel": "Novo Glossário",
+  "newTerm": "Novo Termo",
+  "searchPlaceholder": "Pesquisar termos...",
+  "loading": "Carregando modelos semânticos...",
+  "tabs": {
+    "collections": "Coleções",
+    "concepts": "Conceitos",
+    "graph": "Grafo"
+  },
+  "types": {
+    "concept": "Conceito",
+    "class": "Classe",
+    "property": "Propriedade",
+    "individual": "Indivíduo",
+    "term": "Termo"
+  },
+  "linkedObjects": {
+    "title": "Entidades Vinculadas",
+    "assign": "Vincular Entidade",
+    "loading": "Carregando entidades vinculadas...",
+    "empty": "Nenhuma entidade vinculada a este conceito.",
+    "removed": "Vínculo removido de \"{{label}}\".",
+    "removeFailed": "Falha ao remover vínculo.",
+    "removeAria": "Remover entidade vinculada"
+  },
+  "neighborhood": {
+    "title": "Vizinhança do Conceito",
+    "loading": "Carregando vizinhança...",
+    "empty": "Nenhum conceito relacionado.",
+    "moreParents": "+{{count}} superior(es)",
+    "moreChildren": "+{{count}} subordinado(s)"
+  },
+  "relations": {
+    "title": "Relações",
+    "loading": "Carregando relações...",
+    "empty": "Nenhuma relação encontrada.",
+    "outgoingTooltip": "Este conceito → destino",
+    "incomingTooltip": "Origem → este conceito"
+  },
+  "filters": {
+    "allGlossaries": "Todos os Glossários",
+    "allStatus": "Todos os Status",
+    "bySource": "Filtrar por Fonte",
+    "all": "Todos",
+    "none": "Nenhum",
+    "groupBySource": "Agrupar por Fonte",
+    "showProperties": "Exibir Propriedades",
+    "groupByDomain": "Agrupar por Domínio",
+    "allTypes": "Todos os Tipos",
+    "allScopes": "Todos os Escopos",
+    "allCollections": "Todas as Coleções"
+  },
+  "groupBy": {
+    "collection": "Por Coleção",
+    "domain": "Por Domínio",
+    "source": "Por Fonte"
+  }
+}

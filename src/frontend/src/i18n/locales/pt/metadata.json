@@ -1,0 +1,78 @@
+{
+  "title": "Metadados",
+  "description": "Notas, links e anexos.",
+  "previewRenderedPage": "Pré-visualizar página renderizada",
+  "notes": {
+    "title": "Notas Adicionais",
+    "add": "Adicionar",
+    "refresh": "Atualizar",
+    "noNotes": "Nenhuma nota ainda.",
+    "preview": "Pré-visualizar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "editTitle": "Editar nota",
+    "addTitle": "Adicionar nota",
+    "attachShared": "Anexar nota compartilhada",
+    "selectShared": "Selecionar Nota Compartilhada",
+    "table": {
+      "title": "Título",
+      "description": "Descrição",
+      "created": "Criado em",
+      "actions": "Ações",
+      "level": "Nível",
+      "flags": "Sinalizadores"
+    },
+    "form": {
+      "title": "Título",
+      "shortDescription": "Breve Descrição",
+      "content": "Conteúdo (Markdown)",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "level": "Nível",
+      "inheritable": "Herdável",
+      "shared": "Ativo compartilhado"
+    },
+    "messages": {
+      "deleteFailed": "Falha ao excluir",
+      "addFailed": "Falha ao adicionar nota",
+      "updateFailed": "Falha ao atualizar"
+    }
+  },
+  "links": {
+    "title": "Links Relacionados",
+    "add": "Adicionar",
+    "refresh": "Atualizar",
+    "noLinks": "Nenhum link ainda.",
+    "open": "Abrir",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "editTitle": "Editar link",
+    "addTitle": "Adicionar link",
+    "attachShared": "Anexar link compartilhado",
+    "selectShared": "Selecionar Link Compartilhado",
+    "table": {
+      "title": "Título",
+      "url": "URL",
+      "description": "Descrição",
+      "created": "Criado em",
+      "actions": "Ações",
+      "level": "Nível",
+      "flags": "Sinalizadores"
+    },
+    "form": {
+      "title": "Título",
+      "url": "URL",
+      "description": "Descrição",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "level": "Nível",
+      "inheritable": "Herdável",
+      "shared": "Ativo compartilhado"
+    },
+    "messages": {
+      "deleteFailed": "Falha ao excluir",
+      "addFailed": "Falha ao adicionar link",
+      "updateFailed": "Falha ao atualizar"
+    }
+  }
+}

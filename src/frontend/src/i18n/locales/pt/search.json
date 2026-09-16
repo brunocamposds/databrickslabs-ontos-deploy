@@ -1,0 +1,62 @@
+{
+  "title": "Pesquisa",
+  "placeholder": "Pesquisar em todos os ativos...",
+  "tabs": {
+    "askOntos": "Pergunte ao {{shortName}}",
+    "indexSearch": "Busca no Índice",
+    "searchConcepts": "Pesquisar Conceitos",
+    "viewGraph": "Visualizar Grafo",
+    "searchGraph": "Pesquisar Grafo",
+    "concepts": "Conceitos",
+    "properties": "Propriedades",
+    "knowledgeGraph": "Grafo de Conhecimento"
+  },
+  "subtitles": {
+    "searchConcepts": "Pesquise e navegue por conceitos e propriedades de ontologia",
+    "searchGraph": "Consulte e explore o grafo de conhecimento usando SPARQL"
+  },
+  "noResults": "Nenhum resultado encontrado",
+  "noResultsHint": "Tente ajustar seus termos de pesquisa ou filtros",
+  "results": "{{count}} resultado encontrado",
+  "results_plural": "{{count}} resultados encontrados",
+  "filters": {
+    "all": "Todos",
+    "dataProducts": "Produtos de Dados",
+    "dataContracts": "Contratos de Dados",
+    "datasets": "Conjuntos de Dados",
+    "glossaryTerms": "Termos do Glossário",
+    "teams": "Equipes",
+    "projects": "Projetos"
+  },
+  "sort": {
+    "relevance": "Relevância",
+    "newest": "Mais recentes",
+    "oldest": "Mais antigos",
+    "name": "Nome"
+  },
+  "resultItem": {
+    "type": "Tipo",
+    "owner": "Proprietário",
+    "updated": "Atualizado em"
+  },
+  "kg": {
+    "prefixSearch": "Busca por Prefixo",
+    "prefixSearchDesc": "Encontre recursos ou propriedades por substring de IRI.",
+    "startPath": "Caminho inicial",
+    "pathExplorer": "Explorador de Caminhos",
+    "pathExplorerDesc": "Clique nos objetos para estender o caminho horizontalmente.",
+    "directionFilter": "Filtro de Direção",
+    "everything": "Tudo",
+    "incomingOnly": "Apenas de Entrada",
+    "outgoingOnly": "Apenas de Saída",
+    "contentFilter": "Filtro de Conteúdo",
+    "showConceptsOnly": "Mostrar apenas conceitos/classes",
+    "noOutgoingLinks": "Nenhum vínculo de saída para a seleção atual.",
+    "noLinksMatch": "Nenhum vínculo corresponde aos filtros atuais.",
+    "step": "Passo",
+    "sparql": "SPARQL",
+    "sparqlDesc": "Execute consultas avançadas sobre o grafo carregado.",
+    "examples": "Exemplos",
+    "runSparql": "Executar SPARQL"
+  }
+}

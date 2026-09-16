@@ -1,0 +1,65 @@
+{
+  "title": "Mapeamento de Termos",
+  "subtitle": "Sugira em lote atribuições de conceitos de ontologia para Ativos, Contratos e Produtos de Dados. As decisões são tomadas na área de Revisões de Ativos.",
+  "actions": {
+    "refresh": "Atualizar",
+    "newRun": "Nova execução",
+    "cancel": "Cancelar",
+    "applyAuto": "Aplicar automático ({{count}})",
+    "generateReview": "Gerar revisão",
+    "undo": "Desfazer",
+    "selectRunHint": "Selecione uma execução à esquerda ou inicie uma nova."
+  },
+  "recent": {
+    "title": "Execuções recentes",
+    "loading": "Carregando execuções…",
+    "empty": "Nenhuma execução ainda. Inicie uma com <strong>Nova execução</strong>.",
+    "noComment": "—",
+    "suggestionsCount": "{{count}} sugestões"
+  },
+  "detail": {
+    "runLabel": "Execução",
+    "createdAt": "Criado em",
+    "createdBy": "por {{email}}",
+    "sourcesTitle": "Fontes de sugestões",
+    "customerOntologies": "Ontologias do cliente",
+    "shippedTaxonomies": "Taxonomias integradas",
+    "reviewsLinkPrefix": "As revisões de custodiantes estão na área de",
+    "reviewsLinkText": "Revisões de Ativos",
+    "reviewsLinkSuffix": ". Cada sugestão se torna um AtivoRevisado; as decisões refletem de volta nesta execução automaticamente."
+  },
+  "stats": {
+    "targets": "Alvos",
+    "suggestions": "Sugestões",
+    "pending": "Pendentes",
+    "autoApply": "Auto-aplicar",
+    "accepted": "Aceitas",
+    "rejected": "Rejeitadas",
+    "linksCreated": "Vínculos criados",
+    "linksSkipped": "Vínculos ignorados"
+  },
+  "toast": {
+    "applied": "Aplicado",
+    "appliedDescription": "{{created}} vínculos criados, {{skipped}} ignorados",
+    "applyFailed": "Falha ao aplicar",
+    "undone": "Desfeito",
+    "undoneDescription": "{{removed}} vínculos removidos, {{reverted}} sugestões revertidas",
+    "undoFailed": "Falha ao desfazer",
+    "loadRunFailed": "Falha ao carregar execução",
+    "unknownError": "erro desconhecido"
+  },
+  "confirm": {
+    "undo": "Desfazer execução {{id}}? Isso remove todos os vínculos criados por esta execução."
+  },
+  "errors": {
+    "loadRunsFailed": "Falha ao carregar execuções"
+  },
+  "runConfig": {
+    "title": "Nova Execução de Mapeamento de Termos",
+    "description": "Escolha as ontologias e entidades-alvo. O motor heurístico irá propor atribuições de conceitos que você pode revisar antes de aplicar.",
+    "customerOntologies": "Ontologias do cliente",
+    "shippedTaxonomies": "Taxonomias padrão",
+    "targetEntities": "Entidades-alvo",
+    "startRun": "Iniciar Execução"
+  }
+}

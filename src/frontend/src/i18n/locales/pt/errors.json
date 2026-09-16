@@ -1,0 +1,27 @@
+{
+  "notFound": {
+    "title": "404 - Página Não Encontrada",
+    "message": "A página que você está procurando não existe ou foi movida.",
+    "backHome": "Voltar para o Início"
+  },
+  "unauthorized": {
+    "title": "401 - Não Autorizado",
+    "message": "Você não tem permissão para acessar este recurso.",
+    "login": "Entrar"
+  },
+  "forbidden": {
+    "title": "403 - Proibido",
+    "message": "Você não tem as permissões necessárias para acessar esta página.",
+    "contact": "Entre em contato com o administrador para solicitar acesso."
+  },
+  "serverError": {
+    "title": "500 - Erro no Servidor",
+    "message": "Algo deu errado do nosso lado. Por favor, tente novamente mais tarde.",
+    "retry": "Tentar Novamente"
+  },
+  "generic": {
+    "title": "Erro",
+    "message": "Ocorreu um erro inesperado.",
+    "retry": "Tentar Novamente"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Domínios de Dados",
+  "subtitle": "Organize e gerencie domínios de dados hierárquicos para sua organização.",
+  "addNewDomain": "Adicionar Novo Domínio",
+  "viewDetails": "Ver Detalhes",
+  "editDomain": "Editar Domínio",
+  "deleteDomain": "Excluir Domínio",
+  "noDomainsYet": "Nenhum domínio de dados ainda.",
+  "table": {
+    "name": "Nome",
+    "description": "Descrição",
+    "owners": "Proprietários",
+    "tags": "Tags",
+    "children": "Subdomínios",
+    "lastUpdated": "Última Atualização",
+    "actions": "Ações",
+    "parentPrefix": "↳ Superior:"
+  },
+  "permissions": {
+    "deniedView": "Você não tem permissão para visualizar domínios de dados.",
+    "deniedCreate": "Você não tem permissão para criar domínios de dados.",
+    "deniedEdit": "Você não tem permissão para editar domínios de dados.",
+    "deniedDelete": "Você não tem permissão para excluir domínios de dados.",
+    "permissionDenied": "Permissão Negada"
+  },
+  "messages": {
+    "domainDeleted": "Domínio Excluído",
+    "domainDeletedSuccess": "O domínio de dados foi excluído com sucesso.",
+    "errorFetchingDomains": "Erro ao buscar domínios",
+    "errorDeletingDomain": "Erro ao Excluir Domínio",
+    "errorLoadingData": "Erro ao Carregar Dados"
+  },
+  "deleteDialog": {
+    "title": "Tem certeza absoluta?",
+    "description": "Esta ação não pode ser desfeita. Isso excluirá permanentemente o domínio de dados.",
+    "cancel": "Cancelar",
+    "delete": "Excluir"
+  }
+}

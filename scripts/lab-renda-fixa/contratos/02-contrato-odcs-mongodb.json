@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "apiVersion": "v3.1.0",
+  "kind": "DataContract",
+  "id": "contrato-odcs-renda-fixa-mongodb-002",
+  "name": "Contrato de Dados - Posição Consolidada de Renda Fixa para Canais Digitais (MongoDB)",
+  "version": "1.0.0",
+  "status": "active",
+  "tenant": "CanaisDigitaisMobileInvestimentos",
+  "domain": "Capital Markets",
+  "dataProduct": "Produto de Dados - Renda Fixa 360",
+  "description": {
+    "purpose": "Prover visão consolidada, agregada e de baixíssima latência da carteira de renda fixa do cliente para atender as requisições de tela dos canais de Internet Banking (IB) e Mobile Banking.",
+    "usage": "Servir como backend operacional para APIs de Open Finance, extrato de investimentos no App Mobile e consulta de patrimônio no Internet Banking.",
+    "limitations": "SLA de resposta de leitura menor que 50ms para consultas por chave primária de cliente."
+  },
+  "tags": [
+    "renda-fixa",
+    "mongodb",
+    "canais-digitais",
+    "mobile-app",
+    "internet-banking",
+    "open-finance",
+    "baixa-latencia"
+  ],
+  "servers": [
+    {
+      "server": "mongodb-cluster-investimentos-prod",
+      "type": "mongodb",
+      "host": "mongodb-investimentos.internal:27017",
+      "database": "canais_digitais",
+      "schema": "posicao_consolidada_cliente_rf"
+    }
+  ],
+  "slaProperties": [
+    {
+      "property": "tempoRespostaLeitura",
+      "value": "< 50ms (p99)",
+      "unit": "milissegundos"
+    },
+    {
+      "property": "frequenciaSincronizacao",
+      "value": "Intradiária / Quase tempo real (streaming após eventos)",
+      "unit": "minutos"
+    },
+    {
+      "property": "disponibilidade",
+      "value": "99.99%",
+      "unit": "porcentagem"
+    }
+  ],
+  "schema": [
+    {
+      "name": "posicao_consolidada_cliente_rf",
+      "physicalName": "posicao_consolidada_cliente_rf",
+      "physicalType": "collection",
+      "businessName": "Posição Consolidada do Cliente em Renda Fixa (NoSQL)",
+      "description": "Documento JSON otimizado contendo o patrimônio total do investidor, resumo por indexador e detalhamento de cada título.",
+      "properties": [
+        {
+          "name": "id_cliente",
+          "physicalName": "_id",
+          "logicalType": "string",
+          "physicalType": "string",
+          "primaryKey": true,
+          "required": true,
+          "businessName": "Identificador do Cliente (CPF/CNPJ Hash)",
+          "description": "Chave primária do documento no MongoDB."
+        },
+        {
+          "name": "cpf_cnpj_mascarado",
+          "physicalName": "cpf_cnpj_mascarado",
+          "logicalType": "string",
+          "physicalType": "string",
+          "required": true,
+          "businessName": "CPF/CNPJ Mascarado",
+          "description": "Identificador do titular mascarado para proteção de privacidade (LGPD)."
+        },
+        {
+          "name": "saldo_total_renda_fixa",
+          "physicalName": "saldo_total_renda_fixa",
+          "logicalType": "number",
+          "physicalType": "double",
+          "required": true,
+          "businessName": "Saldo Total Consolidado (R$)",
+          "description": "Soma de todos os ativos de renda fixa do cliente.",
+          "quality": [
+            {
+              "name": "saldo_nao_negativo",
+              "type": "library",
+              "rule": "rangeCheck",
+              "severity": "error",
+              "mustBeGe": "0"
+            }
+          ]
+        },
+        {
+          "name": "data_ultima_atualizacao",
+          "physicalName": "dt_ultima_atualizacao",
+          "logicalType": "datetime",
+          "physicalType": "date",
+          "required": true,
+          "businessName": "Data e Hora da Última Atualização",
+          "description": "Timestamp de consolidação do documento."
+        },
+        {
+          "name": "quantidade_total_titulos",
+          "physicalName": "qtd_total_titulos",
+          "logicalType": "integer",
+          "physicalType": "int",
+          "required": true,
+          "businessName": "Quantidade de Títulos Distintos",
+          "description": "Número de papéis ativos na carteira do cliente."
+        },
+        {
+          "name": "titulos_detalhados",
+          "physicalName": "titulos",
+          "logicalType": "array",
+          "physicalType": "array",
+          "required": true,
+          "businessName": "Lista de Títulos em Carteira",
+          "description": "Array de sub-documentos com ISIN, ticker, rentabilidade e liquidez."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "title": "Revisões de Ativos de Dados",
+  "subtitle": "Revisar e aprovar ativos de dados",
+  "newReview": "Nova Revisão",
+  "createRequest": "Criar Nova Solicitação de Revisão de Ativo de Dados",
+  "searchPlaceholder": "Pesquisar revisões...",
+  "loading": "Carregando revisões...",
+  "noRequests": "Nenhuma solicitação de revisão encontrada.",
+  "toast": {
+    "requestCreated": "Solicitação de revisão \"{{title}}\" criada.",
+    "requestDeleted": "Solicitação de revisão excluída.",
+    "deleteError": "Falha ao excluir solicitação.",
+    "bulkDeleted": "{{count}} solicitação(ões) excluída(s).",
+    "bulkDeleteError": "Algumas solicitações não puderam ser excluídas.",
+    "titleUpdated": "Título atualizado.",
+    "idCopied": "ID copiado para a área de transferência."
+  },
+  "form": {
+    "titleLabel": "Título (Opcional)",
+    "titlePlaceholder": "Deixe vazio para gerar automaticamente a partir dos ativos selecionados"
+  },
+  "actions": {
+    "editTitle": "Editar título",
+    "copyId": "Copiar ID"
+  },
+  "confirm": {
+    "deleteRequest": "Tem certeza de que deseja excluir esta solicitação de revisão?",
+    "bulkDelete": "Tem certeza de que deseja excluir {{count}} solicitação(ões) selecionada(s)?"
+  },
+  "filters": {
+    "allStatus": "Todos os Status",
+    "pending": "Pendente",
+    "approved": "Aprovado",
+    "rejected": "Rejeitado"
+  },
+  "table": {
+    "title": "Título",
+    "untitled": "(sem título)",
+    "asset": "Ativo",
+    "type": "Tipo",
+    "requester": "Solicitante",
+    "reviewer": "Revisor",
+    "status": "Status",
+    "assets": "Ativos",
+    "requested": "Solicitado em",
+    "created": "Criado em",
+    "updated": "Atualizado em",
+    "actions": "Ações"
+  },
+  "messages": {
+    "success": "Sucesso",
+    "error": "Erro",
+    "approveSuccess": "Revisão aprovada com sucesso",
+    "rejectSuccess": "Revisão rejeitada com sucesso",
+    "approveError": "Falha ao aprovar revisão",
+    "rejectError": "Falha ao rejeitar revisão"
+  },
+  "status": {
+    "pending": "Pendente",
+    "in_review": "Em Revisão",
+    "approved": "Aprovado",
+    "rejected": "Rejeitado"
+  }
+}

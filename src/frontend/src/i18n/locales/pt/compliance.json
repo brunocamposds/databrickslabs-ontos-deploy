@@ -1,0 +1,66 @@
+{
+  "title": "Conformidade",
+  "subtitle": "Gerencie políticas e execuções de conformidade",
+  "newPolicy": "Nova Política",
+  "createRule": "Criar Regra",
+  "editRule": "Editar Regra de Conformidade",
+  "createNewRule": "Criar Nova Regra de Conformidade",
+  "searchPlaceholder": "Pesquisar políticas...",
+  "loading": "Carregando dados de conformidade...",
+  "stats": {
+    "overallCompliance": "Conformidade Geral",
+    "acrossAllRules": "Em todas as regras",
+    "activeRules": "Regras Ativas",
+    "currentlyEnforced": "Atualmente em vigor",
+    "criticalIssues": "Problemas Críticos",
+    "requireAttention": "Exigem atenção",
+    "lastUpdated": "Última Atualização",
+    "today": "Hoje"
+  },
+  "form": {
+    "name": "Nome",
+    "description": "Descrição",
+    "category": "Categoria",
+    "selectCategory": "Selecione a categoria",
+    "severity": "Severidade",
+    "selectSeverity": "Selecione a severidade",
+    "ruleCode": "Código da Regra",
+    "rulePlaceholder": "Insira a regra de conformidade no formato DSL de Conformidade",
+    "failureMessage": "Mensagem de Falha",
+    "failureMessagePlaceholder": "ex: Nomes devem usar snake_case (minúsculas com sublinhados)",
+    "failureMessageHint": "Mensagem compreensível exibida aos usuários quando esta política falha. Ajuda a explicar o erro e como corrigi-lo."
+  },
+  "categories": {
+    "security": "Segurança",
+    "dataQuality": "Qualidade dos Dados",
+    "privacy": "Privacidade",
+    "governance": "Governança"
+  },
+  "errors": {
+    "loadingPolicies": "Erro ao Carregar Políticas",
+    "savingPolicy": "Erro ao Salvar Política",
+    "deletingPolicy": "Erro ao Excluir Política"
+  },
+  "toast": {
+    "policySaved": "Política '{{name}}' salva com sucesso",
+    "policyDeleted": "Política excluída com sucesso"
+  },
+  "score": {
+    "title": "Pontuação de Conformidade",
+    "overall": "Pontuação Geral",
+    "trend": "Tendência"
+  },
+  "filters": {
+    "allStatus": "Todos os Status",
+    "allSeverity": "Todas as Severidades"
+  },
+  "table": {
+    "name": "Nome",
+    "status": "Status",
+    "severity": "Severidade",
+    "category": "Categoria",
+    "rule": "Regra",
+    "lastRun": "Última Execução",
+    "actions": "Ações"
+  }
+}

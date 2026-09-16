@@ -1,0 +1,15 @@
+{
+  "title": "Esquema do Banco de Dados",
+  "loading": "Carregando esquema do banco de dados...",
+  "errorLoadingSchema": "Erro ao Carregar Esquema",
+  "legend": "Legenda",
+  "notNull": "NÃO NULO",
+  "tableCount": "{{count}} tabelas",
+  "tableCount_one": "{{count}} tabela",
+  "relationshipCount": "{{count}} relacionamentos",
+  "relationshipCount_one": "{{count}} relacionamento",
+  "columns": "{{count}} colunas",
+  "columns_one": "{{count}} coluna",
+  "tableInfo": "Documentação da tabela",
+  "noDescription": "Nenhuma descrição disponível para esta tabela."
+}

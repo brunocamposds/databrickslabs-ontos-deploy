@@ -1,0 +1,62 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ontos-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: app_ontos
+      POSTGRES_USER: ontos_app_user
+      POSTGRES_PASSWORD: ontos_lab_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ontos_app_user -d app_ontos"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  ontos-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ontos:lab
+    container_name: ontos-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      ENV: "LOCAL"
+      DEBUG: "true"
+      LOG_LEVEL: "INFO"
+      DB_USE_PASSWORD_AUTH: "true"
+      PGHOST: "postgres"
+      PGPORT: "5432"
+      PGDATABASE: "app_ontos"
+      PGUSER: "ontos_app_user"
+      PGPASSWORD: "ontos_lab_password"
+      PGSCHEMA: "app_ontos"
+      DATABRICKS_HOST: "https://mock.databricks.local"
+      DATABRICKS_WAREHOUSE_ID: "mock_warehouse_lab"
+      DATABRICKS_CATALOG: "app_ontos"
+      DATABRICKS_SCHEMA: "app_ontos"
+      MOCK_WORKSPACE_CLIENT: "true"
+      MOCK_USER_DETAILS: "true"
+      MOCK_USER_EMAIL: "admin@ontos.local"
+      MOCK_USER_NAME: "Ontos Admin"
+      MOCK_USER_GROUPS: '["admins"]'
+      APP_ADMIN_DEFAULT_GROUPS: '["admins"]'
+      APP_AUDIT_LOG_DIR: "audit_logs"
+      APP_DEMO_MODE: "true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  postgres-data:

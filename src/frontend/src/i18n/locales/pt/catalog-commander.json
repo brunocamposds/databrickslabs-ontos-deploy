@@ -1,0 +1,67 @@
+{
+  "title": "Catalog Commander",
+  "catalogBrowser": "Navegador de Catálogos",
+  "target": "Destino",
+  "objectInformation": "Informações do Objeto",
+  "basicInformation": "Informações Básicas",
+  "commentsAndActivity": "Comentários & Atividade",
+  "askOntos": "Pergunte ao {{shortName}}",
+  
+  "actions": {
+    "viewData": "Ver Dados",
+    "move": "Mover",
+    "delete": "Excluir",
+    "rename": "Renomear",
+    "info": "Info",
+    "operations": "Operações",
+    "comments": "Comentários",
+    "retry": "Tentar Novamente",
+    "newChat": "Nova Conversa",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  
+  "tooltips": {
+    "copyToTarget": "Copiar para destino",
+    "moveToTarget": "Mover para destino",
+    "moveFromTarget": "Mover do destino",
+    "refresh": "Atualizar (segure Shift para forçar atualização)",
+    "dragToResize": "Arraste para redimensionar"
+  },
+  
+  "labels": {
+    "metastore": "Metastore",
+    "filterCatalogs": "Filtrar catálogos...",
+    "selectEstate": "Selecionar Estate",
+    "name": "Nome:",
+    "type": "Tipo:",
+    "fullPath": "Caminho Completo:",
+    "actions": "Ações:"
+  },
+  
+  "messages": {
+    "selectObjectToViewInfo": "Selecione um objeto para ver suas informações",
+    "selectObjectToViewComments": "Selecione um objeto para ver comentários",
+    "loadingDetails": "Carregando detalhes...",
+    "noDataAvailable": "Nenhum dado disponível",
+    "datasetView": "Visualização do Dataset: {{name}}",
+    "confirmOperation": "Confirmar Operação",
+    "selectedItems": "Itens selecionados: {{items}}",
+    "noItemsSelected": "Nenhum item selecionado"
+  },
+  
+  "askPanel": {
+    "title": "Pergunte ao {{shortName}}",
+    "askAboutItem": "Pergunte sobre este item do catálogo",
+    "askQuestionsAbout": "Faça perguntas sobre \"{{name}}\"",
+    "selectItemFirst": "Selecione um item para fazer perguntas sobre ele",
+    "askAboutPlaceholder": "Pergunte sobre {{name}}...",
+    "selectItemPlaceholder": "Selecione um item primeiro...",
+    "askingAbout": "Perguntando sobre:",
+    "clearChat": "Limpar conversa",
+    "suggestedQuestions": "Perguntas sugeridas:",
+    "typeQuestion": "Digite sua pergunta...",
+    "send": "Enviar",
+    "assistantThinking": "Pensando..."
+  }
+}

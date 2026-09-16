@@ -1,0 +1,72 @@
+{
+  "title": "Papéis de Negócio",
+  "subtitle": "Papéis nomeados que podem ser atribuídos a usuários como proprietários de vários objetos.",
+  "addNew": "Adicionar Papel",
+  "editRole": "Editar Papel",
+  "deleteRole": "Excluir Papel",
+  "table": {
+    "name": "Nome",
+    "description": "Descrição",
+    "category": "Categoria",
+    "status": "Status",
+    "system": "Sistema",
+    "lastUpdated": "Última Atualização",
+    "actions": "Ações"
+  },
+  "categories": {
+    "governance": "Governança",
+    "technical": "Técnico",
+    "business": "Negócio",
+    "operational": "Operacional"
+  },
+  "statuses": {
+    "active": "Ativo",
+    "deprecated": "Obsoleto"
+  },
+  "permissions": {
+    "deniedView": "Você não tem permissão para visualizar papéis de negócio.",
+    "deniedCreate": "Você não tem permissão para criar papéis de negócio.",
+    "deniedEdit": "Você não tem permissão para editar papéis de negócio.",
+    "deniedDelete": "Você não tem permissão para excluir papéis de negócio.",
+    "permissionDenied": "Permissão Negada"
+  },
+  "messages": {
+    "errorFetching": "Erro ao buscar papéis de negócio",
+    "errorDeleting": "Erro ao excluir papel de negócio",
+    "deleted": "Papel de Negócio Excluído",
+    "deletedSuccess": "O papel de negócio foi excluído com sucesso.",
+    "errorLoadingData": "Erro ao Carregar Dados"
+  },
+  "deleteDialog": {
+    "title": "Excluir Papel de Negócio?",
+    "description": "Esta ação não pode ser desfeita. Atribuições existentes de proprietário que usam este papel podem ficar órfãs.",
+    "cancel": "Cancelar",
+    "delete": "Excluir"
+  },
+  "emptyState": {
+    "title": "Nenhum papel de negócio definido ainda",
+    "description": "Crie seu primeiro papel de negócio (ex: Proprietário de Dados, Proprietário de Domínio)."
+  },
+  "form": {
+    "createTitle": "Criar Papel de Negócio",
+    "createDescription": "Adicionar um novo papel de negócio que pode ser atribuído a usuários.",
+    "editTitle": "Editar Papel de Negócio",
+    "editDescription": "Atualizar os detalhes deste papel de negócio.",
+    "create": "Criar",
+    "update": "Salvar Alterações",
+    "noCategory": "Sem categoria",
+    "isApprover": "Aprovador de Fluxo de Trabalho",
+    "isApproverDescription": "Exibir este papel nas opções de aprovadores de fluxo e destinatários de notificação.",
+    "isApproverInUse": "Não é possível desativar — em uso em {{count}} fluxo(s): {{workflows}}.",
+    "labels": {
+      "name": "Nome do Papel",
+      "category": "Categoria",
+      "description": "Descrição"
+    },
+    "placeholders": {
+      "name": "ex: Proprietário dos Dados",
+      "category": "Selecione uma categoria",
+      "description": "Descreva as responsabilidades deste papel..."
+    }
+  }
+}

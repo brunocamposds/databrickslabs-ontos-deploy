@@ -1,0 +1,64 @@
+{
+  "title": "Privilégios e Direitos (Entitlements)",
+  "subtitle": "Gerencie direitos de acesso e permissões",
+  "newEntitlement": "Novo Privilégio",
+  "searchPlaceholder": "Pesquisar privilégios...",
+  "loading": "Carregando privilégios...",
+  "personas": {
+    "title": "Personas",
+    "createPersona": "Criar Persona",
+    "editPersona": "Editar Persona",
+    "createNewPersona": "Criar Nova Persona",
+    "personaName": "Nome da Persona",
+    "noPersonas": "Nenhuma persona encontrada. Crie uma para começar.",
+    "privileges": "privilégios",
+    "accessPrivileges": "Privilégios de Acesso",
+    "noPrivileges": "Nenhum privilégio configurado",
+    "groupAssignments": "Atribuições de Grupo",
+    "noGroups": "Nenhum grupo atribuído",
+    "addPrivilege": "Adicionar Privilégio",
+    "addGroups": "Adicionar Grupos",
+    "securableId": "ID do Recurso Protegido",
+    "securableType": "Tipo do Recurso Protegido",
+    "permission": "Permissão",
+    "selectSecurableType": "Selecione o tipo",
+    "selectPermission": "Selecione a permissão",
+    "selectPersona": "Selecione uma Persona",
+    "selectPersonaHint": "Selecione uma persona para ver detalhes",
+    "createPersonaHint": "Ou crie uma nova usando o botão \"Criar Persona\"",
+    "toast": {
+      "personaCreated": "Persona criada com sucesso",
+      "personaUpdated": "Persona atualizada com sucesso",
+      "personaDeleted": "Persona excluída com sucesso",
+      "privilegeAdded": "Privilégio adicionado com sucesso",
+      "privilegeRemoved": "Privilégio removido com sucesso",
+      "groupsUpdated": "Grupos atualizados com sucesso"
+    },
+    "errors": {
+      "loadFailed": "Falha ao carregar personas",
+      "saveFailed": "Falha ao salvar persona",
+      "deleteFailed": "Falha ao excluir persona",
+      "privilegeAddFailed": "Falha ao adicionar privilégio",
+      "privilegeRemoveFailed": "Falha ao remover privilégio",
+      "groupsUpdateFailed": "Falha ao atualizar grupos"
+    }
+  },
+  "filters": {
+    "allTypes": "Todos os Tipos",
+    "allStatus": "Todos os Status"
+  },
+  "table": {
+    "name": "Nome",
+    "type": "Tipo",
+    "principal": "Principal",
+    "resource": "Recurso",
+    "permissions": "Permissões",
+    "status": "Status",
+    "updated": "Atualizado em",
+    "actions": "Ações"
+  },
+  "messages": {
+    "errorLoading": "Erro ao carregar permissões",
+    "permissionDeleted": "Permissão excluída com sucesso"
+  }
+}

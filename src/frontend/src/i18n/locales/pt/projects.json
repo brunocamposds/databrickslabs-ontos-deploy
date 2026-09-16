@@ -1,0 +1,68 @@
+{
+  "title": "Projetos",
+  "subtitle": "Crie e gerencie projetos para organizar equipes e isolamento de workspaces.",
+  "addNewProject": "Adicionar Novo Projeto",
+  "editProject": "Editar Projeto",
+  "deleteProject": "Excluir Projeto",
+  "form": {
+    "dialog": {
+      "createTitle": "Criar Novo Projeto",
+      "editTitle": "Editar Projeto",
+      "createDescription": "Crie um novo projeto e atribua equipes para isolamento de workspaces.",
+      "editDescription": "Atualize detalhes do projeto e atribuições de equipes."
+    },
+    "sections": {
+      "info": "Informações do Projeto",
+      "teams": "Atribuições de Equipes",
+      "tags": "Tags"
+    },
+    "labels": {
+      "name": "Nome do Projeto *",
+      "title": "Título de Exibição",
+      "description": "Descrição",
+      "projectType": "Tipo de Projeto",
+      "assignTeams": "Atribuir Equipes",
+      "assignedTeams": "Equipes Atribuídas:",
+      "tags": "Tags"
+    },
+    "placeholders": {
+      "name": "Digite o nome do projeto",
+      "title": "Digite o título de exibição (opcional)",
+      "description": "Digite a descrição do projeto (opcional)",
+      "selectProjectType": "Selecione o tipo de projeto",
+      "assignTeams": "Selecione as equipes para atribuir a este projeto",
+      "noTeamsAvailable": "Nenhuma equipe disponível",
+      "allTeamsAssigned": "Todas as equipes já foram atribuídas",
+      "selectTags": "Selecionar tags...",
+      "enterTag": "Inserir tag",
+      "noTagsHelp": "Nenhuma tag adicionada ainda. Clique em \"Adicionar Tag\" para incluir tags do projeto."
+    },
+    "types": {
+      "PERSONAL": "PESSOAL",
+      "TEAM": "EQUIPE"
+    },
+    "buttons": {
+      "addTag": "Adicionar Tag",
+      "update": "Atualizar Projeto",
+      "create": "Criar Projeto"
+    },
+    "toasts": {
+      "createdTitle": "Projeto Criado",
+      "updatedTitle": "Projeto Atualizado",
+      "createdDescription": "O projeto \"{{name}}\" foi criado com sucesso.",
+      "updatedDescription": "O projeto \"{{name}}\" foi atualizado com sucesso.",
+      "createFailedTitle": "Falha ao Criar Projeto",
+      "updateFailedTitle": "Falha ao Atualizar Projeto",
+      "failedDescription": "Ocorreu um erro inesperado."
+    }
+  },
+  "table": {
+    "name": "Nome",
+    "title": "Título",
+    "type": "Tipo",
+    "teams": "Equipes",
+    "tags": "Tags",
+    "updated": "Atualizado em",
+    "actions": "Ações"
+  }
+}

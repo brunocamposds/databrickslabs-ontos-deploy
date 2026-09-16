@@ -1,0 +1,64 @@
+{
+  "title": "Catálogo de Dados",
+  "subtitle": "Navegue por todas as colunas em tabelas e visualizações do Unity Catalog",
+  "searchPlaceholder": "Pesquisar colunas...",
+  "noResults": "Nenhuma coluna encontrada",
+  "tryDifferentSearch": "Tente um termo de pesquisa diferente",
+  "noTablesAccessible": "Nenhuma tabela acessível no Unity Catalog",
+  "showingColumns": "Mostrando {{count}} colunas",
+  "matchingSearch": "correspondentes a",
+  
+  "columns": {
+    "label": "Rótulo",
+    "description": "Descrição",
+    "columnName": "Nome da Coluna",
+    "type": "Tipo",
+    "tableName": "Tabela"
+  },
+  
+  "tabs": {
+    "overview": "Visão Geral",
+    "dataDetails": "Detalhes dos Dados",
+    "lineage": "Linhagem"
+  },
+  
+  "overview": {
+    "basicInfo": "Informações Básicas",
+    "catalog": "Catálogo",
+    "schema": "Esquema",
+    "owner": "Proprietário",
+    "type": "Tipo",
+    "created": "Criado em",
+    "updated": "Atualizado em",
+    "storage": "Armazenamento & Estatísticas",
+    "columns": "Colunas",
+    "rows": "Linhas",
+    "size": "Tamanho",
+    "format": "Formato",
+    "location": "Local de Armazenamento",
+    "description": "Descrição",
+    "tags": "Tags"
+  },
+  
+  "dataDetails": {
+    "title": "Colunas",
+    "description": "Definições e metadados de colunas",
+    "columnName": "Nome da Coluna",
+    "type": "Tipo",
+    "nullable": "Nulável",
+    "description": "Descrição"
+  },
+  
+  "lineage": {
+    "title": "Linhagem de Dados",
+    "description": "Visualizar dependências upstream e downstream",
+    "noLineage": "Nenhuma informação de linhagem disponível",
+    "noLineageHint": "Esta tabela pode não ter nenhuma dependência upstream ou downstream",
+    "both": "Ambas as Direções",
+    "upstream": "Apenas Upstream",
+    "downstream": "Apenas Downstream",
+    "legend": "Legenda",
+    "table": "Tabela",
+    "view": "Visualização"
+  }
+}

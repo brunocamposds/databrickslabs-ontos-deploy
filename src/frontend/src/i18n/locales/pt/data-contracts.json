@@ -1,0 +1,62 @@
+{
+  "title": "Contratos de Dados",
+  "subtitle": "Gerencie seus contratos e especificações de dados",
+  "newContract": "Novo Contrato",
+  "uploadFile": "Enviar Arquivo",
+  "importContract": "Importar",
+  "searchPlaceholder": "Pesquisar contratos de dados...",
+  "loading": "Carregando contratos de dados...",
+  "filters": {
+    "allStatus": "Todos os Status",
+    "allOwners": "Todos os Proprietários"
+  },
+  "table": {
+    "name": "Nome",
+    "status": "Status",
+    "version": "Versão",
+    "owner": "Proprietário",
+    "schema": "Esquema",
+    "tags": "Tags",
+    "created": "Criado em",
+    "updated": "Atualizado em",
+    "actions": "Ações",
+    "viewDetails": "Ver detalhes",
+    "editContract": "Editar contrato",
+    "deleteContract": "Excluir contrato",
+    "viewSchema": "Ver esquema"
+  },
+  "messages": {
+    "deleteConfirm": "Tem certeza de que deseja excluir este contrato de dados?",
+    "deleteSuccess": "Contrato de dados excluído com sucesso",
+    "deleteError": "Falha ao excluir contrato de dados",
+    "fetchError": "Falha ao carregar contratos de dados",
+    "importSuccess": "Contrato de dados importado com sucesso",
+    "importError": "Falha ao importar contrato de dados",
+    "success": "Sucesso",
+    "error": "Erro"
+  },
+  "status": {
+    "draft": "Rascunho",
+    "sandbox": "Sandbox",
+    "proposed": "Proposto",
+    "under_review": "Sob Revisão",
+    "in_review": "Em Revisão",
+    "active": "Ativo",
+    "approved": "Aprovado",
+    "certified": "Certificado",
+    "deprecated": "Obsoleto",
+    "retired": "Aposentado",
+    "published": "Publicado"
+  },
+  "details": {
+    "backToList": "Voltar para a Lista",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "export": "Exportar",
+    "clone": "Clonar",
+    "validate": "Validar",
+    "notFound": "Contrato de dados não encontrado",
+    "loading": "Carregando...",
+    "noDescription": "Nenhuma descrição fornecida"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "title": "Recursos de Segurança",
+  "subtitle": "Gerenciar configurações de segurança e privacidade de dados",
+  "newFeature": "Novo Recurso de Segurança",
+  "addFeature": "Adicionar Recurso de Segurança",
+  "editFeature": "Editar Recurso de Segurança",
+  "searchPlaceholder": "Pesquisar recursos de segurança...",
+  "loading": "Carregando recursos de segurança...",
+  "toast": {
+    "featureCreated": "Recurso de segurança criado com sucesso",
+    "featureUpdated": "Recurso de segurança atualizado com sucesso",
+    "featureDeleted": "Recurso de segurança excluído com sucesso",
+    "loadError": "Falha ao carregar recursos de segurança",
+    "saveError": "Falha ao salvar recurso de segurança",
+    "deleteError": "Falha ao excluir recurso de segurança"
+  },
+  "table": {
+    "name": "Nome",
+    "type": "Tipo",
+    "target": "Ativo de Destino",
+    "status": "Status",
+    "enabled": "Habilitado",
+    "updated": "Atualizado",
+    "actions": "Ações",
+    "conditions": "Condições",
+    "lastUpdated": "Última Atualização"
+  },
+  "messages": {
+    "success": "Sucesso",
+    "error": "Erro",
+    "deleteConfirm": "Tem certeza de que deseja excluir este recurso de segurança?",
+    "deleteSuccess": "Recurso de segurança excluído com sucesso",
+    "deleteError": "Falha ao excluir recurso de segurança",
+    "enableSuccess": "Recurso de segurança habilitado",
+    "disableSuccess": "Recurso de segurança desabilitado"
+  },
+  "types": {
+    "encryption": "Criptografia",
+    "masking": "Mascaramento de Dados",
+    "rowLevel": "Segurança em Nível de Linha (RLS)",
+    "columnLevel": "Segurança em Nível de Coluna",
+    "differential": "Privacidade Diferencial",
+    "rowFiltering": "Filtragem de Linhas",
+    "columnMasking": "Mascaramento de Colunas",
+    "differentialPrivacy": "Privacidade Diferencial",
+    "homomorphicEncryption": "Criptografia Homomórfica",
+    "envelopeEncryption": "Criptografia de Envelope",
+    "tokenization": "Tokenização"
+  },
+  "details": {
+    "backToList": "Voltar para Recursos de Segurança",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "enable": "Habilitar",
+    "disable": "Desabilitar",
+    "notFound": "Recurso de segurança não encontrado",
+    "loading": "Carregando..."
+  },
+  "form": {
+    "createTitle": "Adicionar Recurso de Segurança",
+    "editTitle": "Editar Recurso de Segurança",
+    "name": "Nome",
+    "namePlaceholder": "ex: Mascaramento de CPF",
+    "type": "Tipo",
+    "selectType": "Selecione o tipo",
+    "targetAsset": "Ativo de Destino",
+    "selectTarget": "Selecione o ativo de destino",
+    "enabled": "Habilitado",
+    "description": "Descrição",
+    "descriptionPlaceholder": "Descreva o recurso de segurança...",
+    "configuration": "Configuração",
+    "conditions": "Condições",
+    "cancel": "Cancelar",
+    "save": "Salvar"
+  }
+}

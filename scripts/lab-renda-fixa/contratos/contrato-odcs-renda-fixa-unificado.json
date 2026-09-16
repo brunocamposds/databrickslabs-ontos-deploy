@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "apiVersion": "v3.1.0",
+  "kind": "DataContract",
+  "id": "contrato-odcs-renda-fixa-unificado-001",
+  "name": "Contrato de Dados Unificado - Renda Fixa (Databricks UC & MongoDB)",
+  "version": "1.0.0",
+  "status": "active",
+  "tenant": "MesaDeOperacoesMercadoDeCapitais",
+  "domain": "Capital Markets",
+  "dataProduct": "Produto de Dados - Renda Fixa 360",
+  "description": {
+    "purpose": "Governar formalmente a entrega de dados de Renda Fixa em duas portas de saída simultâneas: Porta Analítica (Databricks Unity Catalog) para inteligência e relatórios corporativos, e Porta Operacional (MongoDB) para consumo em tempo real pelos Canais Digitais (Internet Banking e Mobile App).",
+    "usage": "Consumo analítico via Databricks SQL / Delta Sharing e consumo operacional via API/NoSQL em canais de atendimento.",
+    "limitations": "Carga analítica D+1 às 06:00 BRT e replicação para MongoDB em micro-lotes contínuos."
+  },
+  "tags": [
+    "renda-fixa",
+    "databricks-uc",
+    "mongodb",
+    "contrato-unificado",
+    "multi-output-port",
+    "delta-lake"
+  ],
+  "servers": [
+    {
+      "server": "databricks-unity-catalog-prod",
+      "type": "databricks",
+      "host": "adb-investimentos.azuredatabricks.net",
+      "catalog": "prod_investimentos",
+      "schema": "renda_fixa",
+      "description": "Porta Analítica Delta Lake (Databricks UC) para BI, Ciência de Dados e Databricks Genie"
+    },
+    {
+      "server": "mongodb-cluster-investimentos",
+      "type": "mongodb",
+      "host": "mongodb-prod.investimentos.internal:27017",
+      "database": "investimentos_db",
+      "collection": "posicao_consolidada_cliente_rf",
+      "description": "Porta Operacional NoSQL no MongoDB para baixa latência em canais digitais (IB e Mobile)"
+    }
+  ],
+  "slaProperties": [
+    {
+      "property": "frequenciaAtualizacaoAnalitica",
+      "value": "Diária (D+1 até as 06:00 BRT)",
+      "unit": "dias"
+    },
+    {
+      "property": "latenciaMaximaOperacionalMongo",
+      "value": "50",
+      "unit": "milissegundos"
+    },
+    {
+      "property": "disponibilidade",
+      "value": "99.95%",
+      "unit": "porcentagem"
+    },
+    {
+      "property": "tempoRetencaoHistorica",
+      "value": "10",
+      "unit": "anos"
+    }
+  ],
+  "schema": [
+    {
+      "name": "gold_posicao_titulos_renda_fixa",
+      "physicalName": "posicao_titulos_renda_fixa",
+      "physicalType": "table",
+      "businessName": "Posição Diária de Títulos de Renda Fixa (Gold)",
+      "description": "Tabela analítica Delta contendo o saldo, quantidade, preço unitário e valor atualizado por cliente e título.",
+      "properties": [
+        {
+          "name": "id_posicao",
+          "dataType": "string",
+          "businessName": "Identificador Único da Posição",
+          "description": "Chave primária sintética que identifica a posição do cliente no título e data específica.",
+          "isPrimaryKey": true,
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "is_not_null",
+              "severity": "critical",
+              "description": "O identificador da posição não pode ser nulo."
+            }
+          ]
+        },
+        {
+          "name": "codigo_cliente",
+          "dataType": "string",
+          "businessName": "Código do Cliente",
+          "description": "Identificador unificado do cliente titular da conta de custódia.",
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "is_not_null",
+              "severity": "critical",
+              "description": "O código do cliente é obrigatório."
+            }
+          ]
+        },
+        {
+          "name": "codigo_isin",
+          "dataType": "string",
+          "businessName": "Código ISIN do Título",
+          "description": "Padrão internacional de 12 caracteres alfanuméricos que identifica unicamente o título mobiliário.",
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "regex",
+              "pattern": "^[A-Z]{2}[A-Z0-9]{9}[0-9]$",
+              "severity": "critical",
+              "description": "O código ISIN deve respeitar o padrão internacional ISO 6166."
+            }
+          ]
+        },
+        {
+          "name": "tipo_titulo",
+          "dataType": "string",
+          "businessName": "Tipo do Título",
+          "description": "Classificação do instrumento de renda fixa (CDB, LCI, LCA, CRI, CRA, Debênture, Tesouro Selic, Tesouro IPCA).",
+          "required": true
+        },
+        {
+          "name": "quantidade",
+          "dataType": "decimal(18,4)",
+          "businessName": "Quantidade de Títulos Custodiados",
+          "description": "Quantidade de títulos sob custódia na data base.",
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "min",
+              "value": 0.0,
+              "severity": "critical",
+              "description": "A quantidade de títulos em custódia não pode ser negativa."
+            }
+          ]
+        },
+        {
+          "name": "valor_saldo_bruto",
+          "dataType": "decimal(18,2)",
+          "businessName": "Valor do Saldo Bruto Atualizado",
+          "description": "Valor monetário bruto atualizado a mercado na moeda corrente (BRL).",
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "min",
+              "value": 0.0,
+              "severity": "critical",
+              "description": "O saldo bruto não pode ser negativo."
+            }
+          ]
+        },
+        {
+          "name": "data_posicao",
+          "dataType": "date",
+          "businessName": "Data Base da Posição",
+          "description": "Data de referência do fechamento do mercado (formato ISO YYYY-MM-DD).",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "silver_movimentacao_renda_fixa",
+      "physicalName": "movimentacao_titulos_renda_fixa",
+      "physicalType": "table",
+      "businessName": "Histórico de Movimentações de Renda Fixa (Silver)",
+      "description": "Tabela analítica Delta contendo os lançamentos de compras, vendas, aplicações, resgates e amortizações.",
+      "properties": [
+        {
+          "name": "id_movimentacao",
+          "dataType": "string",
+          "businessName": "Identificador da Movimentação",
+          "description": "Chave primária universal da transação financeira.",
+          "isPrimaryKey": true,
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "is_not_null",
+              "severity": "critical",
+              "description": "O identificador da movimentação não pode ser nulo."
+            }
+          ]
+        },
+        {
+          "name": "codigo_cliente",
+          "dataType": "string",
+          "businessName": "Código do Cliente",
+          "description": "Identificador do cliente que efetuou a movimentação.",
+          "required": true
+        },
+        {
+          "name": "codigo_isin",
+          "dataType": "string",
+          "businessName": "Código ISIN",
+          "description": "Identificador internacional do título movimentado.",
+          "required": true
+        },
+        {
+          "name": "tipo_operacao",
+          "dataType": "string",
+          "businessName": "Tipo de Operação",
+          "description": "Natureza do lançamento (APLICACAO, RESGATE_TOTAL, RESGATE_PARCIAL, AMORTIZACAO, JUROS_CUPOM).",
+          "required": true
+        },
+        {
+          "name": "valor_operacao",
+          "dataType": "decimal(18,2)",
+          "businessName": "Valor Financeiro da Operação",
+          "description": "Volume financeiro total negociado em moeda local (BRL).",
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "min",
+              "value": 0.01,
+              "severity": "critical",
+              "description": "O valor da operação financeira deve ser estritamente positivo."
+            }
+          ]
+        },
+        {
+          "name": "data_liquidacao",
+          "dataType": "date",
+          "businessName": "Data de Liquidação Financeira",
+          "description": "Data efetiva de liquidação financeira na câmara de custódia.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "gold_posicao_consolidada_cliente_rf",
+      "physicalName": "posicao_consolidada_cliente_rf",
+      "physicalType": "collection",
+      "businessName": "Posição Consolidada do Cliente para Canais Digitais (MongoDB)",
+      "description": "Coleção documental otimizada para consultas de alta performance e baixa latência no App Mobile e Internet Banking.",
+      "properties": [
+        {
+          "name": "codigo_cliente",
+          "dataType": "string",
+          "businessName": "Código do Cliente",
+          "description": "Chave de shard e busca principal do cliente no MongoDB.",
+          "isPrimaryKey": true,
+          "required": true
+        },
+        {
+          "name": "total_investido_renda_fixa",
+          "dataType": "number",
+          "businessName": "Total Consolidado Investido em RF",
+          "description": "Soma de todos os saldos de renda fixa do cliente.",
+          "required": true,
+          "qualityRules": [
+            {
+              "rule": "min",
+              "value": 0.0,
+              "severity": "critical",
+              "description": "O total consolidado não pode ser negativo."
+            }
+          ]
+        },
+        {
+          "name": "quantidade_titulos_ativos",
+          "dataType": "integer",
+          "businessName": "Quantidade de Títulos Ativos",
+          "description": "Número de posições distintas detidas pelo cliente.",
+          "required": true
+        },
+        {
+          "name": "data_atualizacao",
+          "dataType": "string",
+          "businessName": "Timestamp de Atualização",
+          "description": "Data e hora ISO 8601 da última sincronização.",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

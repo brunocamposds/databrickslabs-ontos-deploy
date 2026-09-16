@@ -1,180 +1,169 @@
-# Ontos
+# Databricks Ontos — Laboratório de Data Mesh & Governança de Produtos de Dados
 
-[![Test Coverage](https://github.com/databrickslabs/ontos/actions/workflows/test-coverage.yml/badge.svg?branch=main)](https://github.com/databrickslabs/ontos/actions/workflows/test-coverage.yml)
-[![codecov](https://codecov.io/gh/databrickslabs/ontos/branch/main/graph/badge.svg)](https://codecov.io/gh/databrickslabs/ontos)
-[![backend coverage](https://codecov.io/gh/databrickslabs/ontos/branch/main/graph/badge.svg?flag=backend)](https://codecov.io/gh/databrickslabs/ontos?flags[0]=backend)
-[![frontend coverage](https://codecov.io/gh/databrickslabs/ontos/branch/main/graph/badge.svg?flag=frontend)](https://codecov.io/gh/databrickslabs/ontos?flags[0]=frontend)
-
-A comprehensive data governance and management platform built for Databricks Unity Catalog.
-
-![Home](docs/images/home.png)
-
-## Overview
-
-**Ontos** provides enterprise teams with the tools to organize, govern, and deliver high-quality data products following Data Mesh principles and industry standards like [ODCS](https://github.com/bitol-io/open-data-contract-standard) (Open Data Contract Standard) and [ODPS](https://github.com/bitol-io/open-data-product-standard) (Open Data Product Specification).
-
-## Key Features
-
-### 📊 Data Products
-Group and manage related Databricks assets (tables, views, functions, models, dashboards) as cohesive, consumable products with clear ownership and lifecycle management.
-
-### 📝 Data Contracts
-Define formal specifications for data assets with schema definitions, quality rules, SLOs, and semantic meaning following the ODCS v3.1.0 standard.
-
-### 📦 Datasets
-Register and group existing data assets across systems (Unity Catalog, Snowflake) and environments (dev, staging, prod), bridging physical assets to formal contracts.
-
-### 🏢 Organizational Structure
-Organize data work using **Domains**, **Teams**, and **Projects** aligned with your organizational structure and data mesh architecture.
-
-### 🧠 Semantic Models
-Link technical data assets to business concepts through a knowledge graph, enabling semantic search and maintaining a shared vocabulary.
-
-### ✅ Compliance Automation
-Define and enforce governance policies using a declarative DSL (Domain-Specific Language). Run automated compliance checks with configurable actions (tagging, notifications, enforcement).
-
-### 🔍 Asset Review Workflows
-Enable Data Stewards to formally review and approve assets before production promotion, with AI-assisted analysis and full audit trails.
-
-### 🤖 AI Integration (MCP)
-Expose your data governance platform to AI assistants via the Model Context Protocol (MCP), enabling natural language queries and automation.
-
-## Architecture
-
-Ontos is designed to run as a **Databricks App**:
-
-- **Frontend**: React + TypeScript with Tailwind CSS and Shadcn UI
-- **Backend**: Python + FastAPI with SQLAlchemy ORM
-- **Database**: PostgreSQL (or Databricks Lakebase in production)
-- **Integration**: Native Databricks SDK integration for Unity Catalog operations
-
-## Quick Start
-
-### Prerequisites
-
-- Python 3.10 - 3.12
-- Node.js 18+ (includes npm)
-- Hatch (Python build tool)
-- PostgreSQL (for local development)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/databrickslabs/ontos.git
-cd ontos
-
-# Install frontend dependencies
-cd src/frontend
-npm install
-
-# Copy and configure backend environment
-cd ../../src/backend
-cp .env.example .env
-# Edit .env with your configuration
-```
-
-### Running Locally
-
-**Terminal 1 - Frontend:**
-```bash
-cd src/frontend
-npm run dev:frontend
-```
-
-**Terminal 2 - Backend:**
-```bash
-cd src
-mkdir backend/static
-hatch -e dev run dev-backend
-```
-
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
-- API Docs: http://localhost:8000/docs
-
-### Deploying to Databricks
-
-```bash
-databricks bundle deploy --var="catalog=app_data" --var="schema=app_ontos"
-databricks apps deploy <app-name>
-```
-
-## Documentation
-
-| Document | Description |
-|----------|-------------|
-| [User Guide](src/docs/USER-GUIDE.md) | Comprehensive guide for end users |
-| [Configuring](CONFIGURING.md) | Environment variables, database setup, and deployment |
-| [Contributing](CONTRIBUTING.md) | Development setup, commit guidelines, and release process |
-| [API Docs](http://localhost:8000/docs) | Interactive API documentation (when running locally) |
-| [Compliance DSL Guide](src/docs/compliance-dsl-guide.md) | Quick start for writing compliance rules |
-| [Compliance DSL Reference](src/docs/compliance-dsl-reference.md) | Complete DSL syntax reference |
-
-## User Roles
-
-Ontos supports role-based access control with predefined roles:
-
-| Role | Description |
-|------|-------------|
-| **Admin** | Full system access |
-| **Data Governance Officer** | Broad governance oversight |
-| **Data Steward** | Review and approve contracts/products |
-| **Data Producer** | Create and manage data products |
-| **Data Consumer** | Discover and use data products |
-| **Security Officer** | Security and entitlements management |
-
-## Project Structure
-
-```
-ontos/
-├── src/
-│   ├── backend/           # FastAPI backend
-│   │   ├── src/
-│   │   │   ├── common/    # Shared utilities
-│   │   │   ├── controller/# Business logic managers
-│   │   │   ├── db_models/ # SQLAlchemy models
-│   │   │   ├── models/    # Pydantic API models
-│   │   │   ├── repositories/ # Database access
-│   │   │   └── routes/    # API endpoints
-│   │   └── alembic/       # Database migrations
-│   ├── frontend/          # React frontend
-│   │   └── src/
-│   │       ├── components/# UI components
-│   │       ├── views/     # Page components
-│   │       ├── hooks/     # Custom React hooks
-│   │       ├── stores/    # State management
-│   │       └── types/     # TypeScript definitions
-│   ├── docs/              # Documentation
-│   └── scripts/           # Build and utility scripts
-├── docs/                  # Additional documentation
-├── CONTRIBUTING.md        # Contributing guidelines
-└── README.md              # This file
-```
-
-## Standards & Specifications
-
-Ontos implements and integrates with these standards:
-
-- **[ODCS](https://github.com/bitol-io/open-data-contract-standard)** - Open Data Contract Standard (v3.1.0)
-- **[ODPS](https://github.com/bitol-io/open-data-product-standard)** - Open Data Product Specification
-- **[MCP](https://modelcontextprotocol.io/)** - Model Context Protocol for AI integration
-- **[RDF](https://www.w3.org/RDF/)** - Resource Description Framework for ontology-driven asset modeling
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for:
-
-- Development setup instructions
-- Commit message conventions (we use [Conventional Commits](https://www.conventionalcommits.org/))
-- Versioning and release process
-- Code style guidelines
-- Pull request process
-
-## License
-
-This project is licensed under the Databricks License - see the [LICENSE.txt](LICENSE.txt) file for details.
+> **Nota:** A documentação técnica original do projeto upstream Databricks Labs Ontos foi preservada e renomeada para [**`README_ONTOS.md`**](README_ONTOS.md).
 
 ---
 
-**Maintained by**: [Databricks](https://databricks.com)
+## 🎯 Sobre o Laboratório
+
+Este repositório contém uma distribuição do **Databricks Ontos** preparada para execução local e demonstração prática de **Governança Semântica e Data Mesh**.
+
+O ambiente foi customizado para simular um cenário corporativo do setor financeiro: o **Produto de Dados Renda Fixa 360**, integrando a camada analítica (**Databricks Unity Catalog — Delta Lake**) e a camada operacional (**MongoDB — Document Store**) sob o mesmo contrato de dados padronizado.
+
+### 🌟 Principais Conceitos Demonstrados
+
+1. **Contratos de Dados Unificados ([ODCS v3.1.0](https://github.com/bitol-io/open-data-contract-standard))**:
+   - Um único contrato formal define schema, regras de negócio corporativas (ex.: validação de ISIN, saldos não negativos) e SLOs de qualidade.
+   - O contrato atende simultaneamente múltiplas plataformas através da seção `servers`.
+2. **Produtos de Dados Multi-Porta ([ODPS v1.0.0](https://github.com/bitol-io/open-data-product-standard))**:
+   - Entrega por porta analítica (Delta Lake para cientistas e analistas) e porta operacional (MongoDB para canais digitais e internet banking).
+3. **Semântica e Ontologias (RDF / OWL)**:
+   - Termos de negócio e grafos semânticos conectando o catálogo técnico a conceitos corporativos.
+4. **Linhagem Medallion Ponta a Ponta**:
+   - Rastreabilidade visual desde as fontes brutas (BACEN/Mainframe) $\rightarrow$ Bronze $\rightarrow$ Silver $\rightarrow$ Gold.
+5. **Marketplace Corporativo e Self-Service**:
+   - Descoberta de produtos com selos de certificação (*Gold Certified*), termos de uso e subscrição.
+
+---
+
+## 🗺️ Arquitetura do Caso de Uso (Renda Fixa 360)
+
+```
+[FONTES BRUTAS]                 [CAMADA BRONZE]                  [CAMADA SILVER]                   [CAMADA GOLD / CONSUMO]
+                                 (Raw Ingestion)                  (Conformed Data)                  (Sumarizada & Entrega)
+
+API BACEN / SELIC  ─────────►  bronze_operacoes_selic_bacen  ─►  silver_titulos_renda_fixa  ──┐
+                                (Tabela Delta)                   (Tabela Delta)               │
+                                                                                              ├──►  gold_posicao_titulos_renda_fixa
+                                                                                              │      (Databricks UC - Delta Lake)
+MAINFRAME LEGADO   ─────────►  bronze_boletas_legado        ─►  silver_movimentacao_rf     ──┘               │
+                                (Tabela Delta)                   (Tabela Delta)                               │ (Sync Contínuo)
+                                                                                                              ▼
+                                                                                                    gold_posicao_consolidada_cliente_rf
+                                                                                                     (NoSQL MongoDB - App & IB)
+                                                                                                              ▲
+                                                                                                              │
+                                                   ┌──────────────────────────────────────────────────────────┴───────────────┐
+                                                   │             PRODUTO DE DADOS: RENDA FIXA 360 (ODPS)                      │
+                                                   │  • Status: ACTIVE | Escopo: ORGANIZATION | Selo: GOLD CERTIFIED          │
+                                                   │  • Contrato Unificado: ODCS v3.1.0 (Databricks UC + MongoDB)             │
+                                                   │  • Porta 1: Analítica (posicao + movimentacao)                           │
+                                                   │  • Porta 2: Operacional (posicao_consolidada)                            │
+                                                   └──────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 💻 Pré-requisitos para Reprodução
+
+Para executar o ambiente e rodar os cenários de teste, certifique-se de possuir:
+
+* **Sistema Operacional:** Windows 10/11 com **WSL2** (distribuição recomendada: Ubuntu).
+* **Motor de Contêineres:** [Rancher Desktop](https://rancherdesktop.io/) (com motor Moby/Docker e Kubernetes k3s habilitados) OU Docker Desktop.
+* **Ferramentas de Linha de Comando (no WSL):**
+  * `bash`, `curl`, `jq`
+  * `kubectl` (conectado ao cluster k3s do Rancher Desktop)
+  * `docker` ou `docker compose`
+  * *(Opcional)* `terraform` (caso utilize a esteira automatizada)
+
+---
+
+## 🚀 Como Subir o Ambiente
+
+Você pode inicializar a plataforma de duas formas:
+
+### Opção 1: Deploy Automatizado no Kubernetes (Recomendado)
+
+O script unificado provisiona a infraestrutura, compila a imagem Docker multi-stage local, aplica os manifestos Kubernetes e inicia os túneis de acesso:
+
+```bash
+# Na raiz do repositório clonado (no terminal WSL2 / Linux):
+chmod +x deploy.sh scripts/*.sh scripts/lab-renda-fixa/*.sh
+
+./deploy.sh
+```
+
+### Opção 2: Execução Direta via Docker Compose
+
+Caso prefira executar sem o Kubernetes:
+
+```bash
+docker compose -f docker-compose.lab.yml up -d
+```
+
+---
+
+## 🌐 Endereços de Acesso
+
+Após a inicialização dos serviços, acesse pelo navegador no Windows:
+
+| Serviço / Interface | URL Local | Descrição |
+| :--- | :--- | :--- |
+| **Marketplace & UI do Ontos** | [http://localhost:8000](http://localhost:8000) (ou `:30080` via NodePort) | Portal completo de Produtos de Dados e Governança |
+| **Catálogo de Produtos** | [http://localhost:8000/data-products](http://localhost:8000/data-products) | Gestão e catálogo de produtos ODPS |
+| **Contratos de Dados** | [http://localhost:8000/data-contracts](http://localhost:8000/data-contracts) | Especificações e schemas ODCS v3.1.0 |
+| **Linhagem e Ativos Técnicos** | [http://localhost:8000/assets](http://localhost:8000/assets) | Grafo de ativos e rastreabilidade técnica |
+| **Domínios de Dados** | [http://localhost:8000/data-domains](http://localhost:8000/data-domains) | Estrutura organizacional e times federados |
+| **Grafo Semântico / Glossário** | [http://localhost:8000/knowledge/collections](http://localhost:8000/knowledge/collections) | Conceitos de negócio no grafo RDF/OWL |
+| **Documentação da API (Swagger)** | [http://localhost:8000/docs](http://localhost:8000/docs) | Endpoints REST OpenAPI interativos |
+| **Health Check** | [http://localhost:8000/api/health](http://localhost:8000/api/health) | Diagnóstico de integridade do backend e banco |
+
+---
+
+## 🎬 Execução do Laboratório Prático (Renda Fixa 360)
+
+O laboratório é composto por 8 etapas guiadas e automatizadas via scripts Shell.
+
+### Execução Completa com Pausas Interativas
+
+Execute o orquestrador no terminal para narrar e demonstrar cada etapa:
+
+```bash
+./scripts/lab-renda-fixa/executar-lab-completo.sh --pausar
+```
+
+### Etapas do Roteiro
+
+| # | Etapa | Script | O que é demonstrado |
+| :-: | :--- | :--- | :--- |
+| **1** | **Domínio e Time** | `01-criar-dominio-e-time.sh` | Criação do subdomínio *Mercado de Capitais* subordinado ao *Core*, e do time *Mesa de Operações de Renda Fixa*. |
+| **2** | **Camada Semântica** | `02-criar-glossario-e-conceitos.sh` | Modelagem dos conceitos no Grafo RDF/OWL (*Posição*, *Movimentação* e *Posição Consolidada*). |
+| **3** | **Ativos Físicos** | `03-cadastrar-ativos-fisicos.sh` | Registro das tabelas Medallion (Bronze, Silver, Gold Delta e NoSQL MongoDB). |
+| **4** | **Contrato ODCS** | `04-importar-contratos-odcs.sh` | Registro do contrato de dados unificado v3.1.0 contemplando múltiplos servidores. |
+| **5** | **Produto ODPS** | `05-cadastrar-produto-odps-multi-portas.sh` | Publicação do Produto de Dados com porta analítica e operacional apontando para o mesmo contrato. |
+| **6** | **Linhagem Medallion** | `06-construir-linhagem-medallion.sh` | Conexão dos nós de linhagem desde a ingestão até as saídas de consumo. |
+| **7** | **Marketplace de Dados** | `07-ativar-e-publicar-marketplace.sh` | Transição para status `ACTIVE`, atribuição de selo *Gold Certified* e publicação no catálogo de consumo. |
+| **8** | **Grafo Semântico** | `08-vincular-grafo-semantico.sh` | Conexão entre colunas técnicas físicas e os conceitos semânticos de negócio. |
+
+Consulte o documento completo em [**`docs/ROTEIRO_APRESENTACAO_LAB_RENDA_FIXA.md`**](docs/ROTEIRO_APRESENTACAO_LAB_RENDA_FIXA.md) para os pontos de fala, telas a serem exibidas e perguntas frequentes de arquitetura.
+
+---
+
+## 🛠️ Comandos Úteis do Ambiente
+
+* **Status dos Pods do Kubernetes:**
+  ```bash
+  kubectl get pods -n ontos
+  ```
+* **Logs da Aplicação:**
+  ```bash
+  kubectl logs -n ontos -l app=ontos-app -f
+  ```
+* **Gerenciamento de Túneis (Port-Forward):**
+  ```bash
+  ./scripts/port-forward.sh [start|stop|status]
+  ```
+* **Reset / Destruição do Ambiente:**
+  ```bash
+  kubectl delete -f k8s/
+  # ou via terraform:
+  cd terraform && terraform destroy -auto-approve
+  ```
+
+---
+
+## 📚 Documentação Complementar
+
+* [**`README_ONTOS.md`**](README_ONTOS.md): Documentação oficial do Databricks Labs Ontos (arquitetura interna, desenvolvimento local com Hatch, testes unitários e CI/CD).
+* [**`docs/LAB_GUIDE.md`**](docs/LAB_GUIDE.md): Guia detalhado de infraestrutura no Rancher Desktop / k3s / WSL2.
+* [**`docs/ROTEIRO_APRESENTACAO_LAB_RENDA_FIXA.md`**](docs/ROTEIRO_APRESENTACAO_LAB_RENDA_FIXA.md): Roteiro completo de apresentação para executivos e times técnicos.

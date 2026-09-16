@@ -1,0 +1,33 @@
+# Version control & tooling
+.git
+.github
+.cursor
+.cursorrules
+.planning
+
+# Node / Frontend caches
+**/node_modules
+src/frontend/static
+src/backend/static
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python caches & virtual environments
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.pytest_cache
+**/.ruff_cache
+**/.coverage
+**/htmlcov
+.venv
+venv
+
+# Documentation and website sources (not needed in runtime container)
+website
+docs
+plans
+tests
+e2e

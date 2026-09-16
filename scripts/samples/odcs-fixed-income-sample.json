@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "apiVersion": "v3.1.0",
+  "kind": "DataContract",
+  "id": "contrato-odcs-renda-fixa-brasil-001",
+  "name": "Contrato de Dados - Títulos de Renda Fixa do Mercado Brasileiro",
+  "version": "1.0.0",
+  "status": "active",
+  "tenant": "MesaDeOperacoesMercadoDeCapitais",
+  "domain": "Capital Markets",
+  "dataProduct": "Produto de Dados - Precificação e Mercado de Renda Fixa",
+  "description": {
+    "purpose": "Prover base de dados oficial, padronizada e homologada de instrumentos de renda fixa públicos e privados do mercado financeiro brasileiro (Tesouro Direto, Debêntures, CDBs, LCI, LCA, CRI e CRA) para precificação diária, apuração de risco e curvas de juros.",
+    "usage": "Utilizado por sistemas de liquidação e custódia, cálculo de marcação a mercado (MtM), modelos de duration e convexidade da carteira, além de relatórios regulatórios exigidos pelo Banco Central do Brasil (BACEN) e CVM.",
+    "limitations": "Taxas indicativas apuradas no fechamento do mercado às 18:30 BRT. Operações no mercado secundário sujeitas a validação na câmara B3."
+  },
+  "tags": [
+    "renda-fixa",
+    "mercado-de-capitais",
+    "titulos-publicos",
+    "debentures",
+    "marcacao-a-mercado",
+    "bacen",
+    "anbima"
+  ],
+  "authoritativeDefinitions": [
+    {
+      "type": "canonical",
+      "url": "https://www.anbima.com.br/pt_br/informar/taxas-titulos-publicos.htm",
+      "description": "Metodologia oficial ANBIMA de precificação de títulos públicos e privados"
+    },
+    {
+      "type": "regulamento",
+      "url": "https://www.bcb.gov.br/estabilidadefinanceira/selic",
+      "description": "Regulamento de Liquidação e Custódia do Sistema Especial de Liquidação e Custódia (SELIC)"
+    }
+  ],
+  "servers": [
+    {
+      "server": "lakehouse-mercado-capitais",
+      "type": "postgres",
+      "host": "postgres.ontos.svc.cluster.local",
+      "port": 5432,
+      "database": "ontos_lab",
+      "schema": "mercado_de_capitais"
+    }
+  ],
+  "slaProperties": [
+    {
+      "property": "frequenciaAtualizacao",
+      "value": "Intradiária (a cada 30 minutos em dias úteis)",
+      "unit": "minutos"
+    },
+    {
+      "property": "disponibilidade",
+      "value": "99.9%",
+      "unit": "porcentagem"
+    },
+    {
+      "property": "tempoRetencaoHistorica",
+      "value": "5",
+      "unit": "anos"
+    }
+  ],
+  "support": [
+    {
+      "channel": "canal-suporte-dados-renda-fixa",
+      "tool": "slack",
+      "url": "https://slack.com/app_redirect?channel=suporte-dados-renda-fixa",
+      "scope": "issues",
+      "description": "Canal de suporte e comunicação de incidentes para engenharia e negócios de renda fixa"
+    }
+  ],
+  "schema": [
+    {
+      "name": "titulos_renda_fixa",
+      "physicalName": "tb_titulos_renda_fixa",
+      "physicalType": "table",
+      "businessName": "Títulos e Instrumentos de Renda Fixa",
+      "description": "Tabela mestre contendo os títulos de dívida negociados, indexadores, taxas contratuais, prazos e preços unitários (PU).",
+      "properties": [
+        {
+          "name": "id_titulo",
+          "physicalName": "id_titulo",
+          "logicalType": "string",
+          "physicalType": "uuid",
+          "primaryKey": true,
+          "required": true,
+          "businessName": "Identificador Único do Título",
+          "description": "Chave primária exclusiva universal (UUID) do título na base central.",
+          "classification": "interno"
+        },
+        {
+          "name": "codigo_isin",
+          "physicalName": "cd_isin",
+          "logicalType": "string",
+          "physicalType": "varchar(12)",
+          "required": true,
+          "businessName": "Código Internacional ISIN",
+          "description": "Código internacional de identificação de ativos financeiros em conformidade com o padrão ISO 6166.",
+          "examples": ["BRSTNCLF1R93", "BRBBDCDB0012", "BRVALEDBS015"],
+          "quality": [
+            {
+              "name": "formato_isin_valido",
+              "type": "library",
+              "rule": "regexMatch",
+              "dimension": "validity",
+              "severity": "error",
+              "description": "O código ISIN brasileiro deve possuir 2 letras (BR) seguidas de 10 caracteres alfanuméricos.",
+              "pattern": "^[A-Z]{2}[A-Z0-9]{9}[0-9]$"
+            }
+          ]
+        },
+        {
+          "name": "codigo_negociacao",
+          "physicalName": "cd_ticker",
+          "logicalType": "string",
+          "physicalType": "varchar(30)",
+          "required": true,
+          "businessName": "Código de Negociação / Ticker",
+          "description": "Mnemônico de negociação do papel nas plataformas de mercado (ex: NTN-B 2035, LFT 2027, CDB-ITAU-DI).",
+          "examples": ["NTN-B 2035", "LFT 2027", "LTN 2026", "CDB-ITAU-DI", "DEB-VALE31"]
+        },
+        {
+          "name": "tipo_instrumento",
+          "physicalName": "tp_instrumento",
+          "logicalType": "string",
+          "physicalType": "varchar(50)",
+          "required": true,
+          "businessName": "Tipo de Instrumento de Renda Fixa",
+          "description": "Categoria do título financeiro emitido (Título Público Soberano, Debênture Corporativa, CDB, LCI, LCA, CRI, CRA).",
+          "examples": ["Titulo Publico", "Debenture", "CDB", "LCI", "CRI"]
+        },
+        {
+          "name": "nome_emissor",
+          "physicalName": "nm_emissor",
+          "logicalType": "string",
+          "physicalType": "varchar(150)",
+          "required": true,
+          "businessName": "Razão Social do Emissor",
+          "description": "Entidade devedora responsável pela emissão e amortização do título (Tesouro Nacional, bancos ou empresas de capital aberto).",
+          "examples": ["Tesouro Nacional do Brasil", "Banco Itaú Unibanco S.A.", "Vale S.A.", "Petrobras S.A."]
+        },
+        {
+          "name": "indexador",
+          "physicalName": "nm_indexador",
+          "logicalType": "string",
+          "physicalType": "varchar(20)",
+          "required": true,
+          "businessName": "Indexador Financeiro",
+          "description": "Índice de correção monetária ou taxa de referência da remuneração: CDI, IPCA, SELIC, PRE ou IGP-M.",
+          "examples": ["CDI", "IPCA", "PRE", "SELIC"]
+        },
+        {
+          "name": "taxa_cupom_anual",
+          "physicalName": "vl_taxa_cupom",
+          "logicalType": "number",
+          "physicalType": "numeric(8,4)",
+          "required": true,
+          "businessName": "Taxa de Cupom ou Spread (% a.a.)",
+          "description": "Taxa anual contratual prefixada ou spread percentual sobre o indexador pactuado.",
+          "examples": ["6.2500", "0.0000", "1.1500"],
+          "quality": [
+            {
+              "name": "taxa_cupom_nao_negativa",
+              "type": "library",
+              "rule": "rangeCheck",
+              "dimension": "accuracy",
+              "severity": "error",
+              "description": "A taxa anual de cupom deve ser maior ou igual a zero.",
+              "mustBeGe": "0"
+            }
+          ]
+        },
+        {
+          "name": "data_emissao",
+          "physicalName": "dt_emissao",
+          "logicalType": "date",
+          "physicalType": "date",
+          "required": true,
+          "businessName": "Data de Emissão",
+          "description": "Data de emissão e liquidação inicial do título no mercado primário.",
+          "examples": ["2023-01-15", "2024-03-20"]
+        },
+        {
+          "name": "data_vencimento",
+          "physicalName": "dt_vencimento",
+          "logicalType": "date",
+          "physicalType": "date",
+          "required": true,
+          "businessName": "Data de Vencimento / Resgate",
+          "description": "Data final estipulada para o resgate do valor principal e término da dívida.",
+          "examples": ["2026-01-01", "2035-08-15"]
+        },
+        {
+          "name": "classificacao_risco",
+          "physicalName": "cd_rating",
+          "logicalType": "string",
+          "physicalType": "varchar(10)",
+          "required": false,
+          "businessName": "Classificação de Risco de Crédito (Rating)",
+          "description": "Nota de crédito atribuída por agências de classificação de risco (Standard & Poor's, Moody's, Fitch).",
+          "examples": ["AAA(bra)", "AA+", "brAAA", "A-"]
+        },
+        {
+          "name": "moeda",
+          "physicalName": "cd_moeda",
+          "logicalType": "string",
+          "physicalType": "varchar(3)",
+          "required": true,
+          "businessName": "Moeda de Liquidação",
+          "description": "Código da moeda conforme ISO 4217 utilizada para negociação e pagamento.",
+          "examples": ["BRL", "USD"]
+        },
+        {
+          "name": "preco_unitario",
+          "physicalName": "vl_preco_unitario",
+          "logicalType": "number",
+          "physicalType": "numeric(15,6)",
+          "required": true,
+          "businessName": "Preço Unitário de Mercado (PU)",
+          "description": "Preço de mercado da unidade do papel apurado na cotação de fechamento.",
+          "examples": ["1045.285000", "3250.780000", "985.420000"],
+          "quality": [
+            {
+              "name": "preco_unitario_positivo",
+              "type": "library",
+              "rule": "rangeCheck",
+              "dimension": "accuracy",
+              "severity": "error",
+              "description": "O Preço Unitário (PU) deve ser estritamente maior que zero.",
+              "mustBeGt": "0"
+            }
+          ]
+        },
+        {
+          "name": "taxa_retorno_anual_ytm",
+          "physicalName": "vl_ytm",
+          "logicalType": "number",
+          "physicalType": "numeric(8,4)",
+          "required": true,
+          "businessName": "Taxa Indicativa Anual (YTM % a.a.)",
+          "description": "Taxa interna de retorno anualizada apurada pelo mercado para liquidação até o vencimento.",
+          "examples": ["12.8500", "6.4500", "11.1000"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "title": "Tipos de Ativos",
+  "subtitle": "Modelos reutilizáveis que definem como diferentes tipos de ativos são estruturados.",
+  "addNew": "Adicionar Tipo de Ativo",
+  "editAssetType": "Editar Tipo de Ativo",
+  "deleteAssetType": "Excluir Tipo de Ativo",
+  "table": {
+    "name": "Nome",
+    "description": "Descrição",
+    "category": "Categorias",
+    "status": "Status",
+    "assetCount": "Ativos",
+    "lastUpdated": "Última Atualização",
+    "actions": "Ações"
+  },
+  "categories": {
+    "data": "Dados",
+    "analytics": "Análise",
+    "integration": "Integração",
+    "system": "Sistema",
+    "custom": "Personalizado"
+  },
+  "statuses": {
+    "active": "Ativo",
+    "deprecated": "Obsoleto"
+  },
+  "permissions": {
+    "deniedView": "Você não tem permissão para visualizar tipos de ativos.",
+    "deniedCreate": "Você não tem permissão para criar tipos de ativos.",
+    "deniedEdit": "Você não tem permissão para editar tipos de ativos.",
+    "deniedDelete": "Você não tem permissão para excluir tipos de ativos.",
+    "permissionDenied": "Permissão Negada"
+  },
+  "messages": {
+    "errorFetching": "Erro ao buscar tipos de ativos",
+    "errorDeleting": "Erro ao excluir tipo de ativo",
+    "deleted": "Tipo de Ativo Excluído",
+    "deletedSuccess": "O tipo de ativo foi excluído com sucesso.",
+    "errorLoadingData": "Erro ao Carregar Dados"
+  },
+  "deleteDialog": {
+    "title": "Excluir Tipo de Ativo?",
+    "description": "Esta ação não pode ser desfeita. Ativos existentes deste tipo podem ficar órfãos.",
+    "cancel": "Cancelar",
+    "delete": "Excluir"
+  },
+  "emptyState": {
+    "title": "Nenhum tipo de ativo definido ainda",
+    "description": "Crie seu primeiro tipo de ativo para começar a definir modelos de ativos."
+  },
+  "form": {
+    "createTitle": "Criar Tipo de Ativo",
+    "createDescription": "Adicionar um novo modelo de tipo de ativo.",
+    "editTitle": "Editar Tipo de Ativo",
+    "editDescription": "Atualizar os detalhes deste tipo de ativo.",
+    "create": "Criar",
+    "update": "Salvar Alterações",
+    "noCategory": "Sem categoria",
+    "labels": {
+      "icon": "Ícone",
+      "name": "Nome",
+      "category": "Categoria",
+      "description": "Descrição"
+    },
+    "placeholders": {
+      "name": "ex: Tabela Delta",
+      "category": "Selecione uma categoria",
+      "description": "Descreva a finalidade deste tipo de ativo..."
+    }
+  }
+}

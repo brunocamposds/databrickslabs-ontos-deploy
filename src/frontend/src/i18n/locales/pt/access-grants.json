@@ -1,0 +1,60 @@
+{
+  "request": {
+    "title": "Solicitar Acesso",
+    "description": "Solicitar permissão para visualizar e usar este(a) {{entityType}}.",
+    "reason": {
+      "label": "Motivo do Acesso",
+      "placeholder": "Explique por que você precisa de acesso a este(a) {{entityType}}...",
+      "required": "Por favor, forneça um motivo para solicitar acesso",
+      "minLength": "Por favor, forneça um motivo mais detalhado (pelo menos 10 caracteres)"
+    },
+    "duration": {
+      "label": "Duração do Acesso",
+      "placeholder": "Selecione a duração",
+      "helpText": "O acesso expirará após a duração selecionada. Você pode solicitar renovação antes da expiração.",
+      "days": "{{count}} dia",
+      "days_plural": "{{count}} dias",
+      "months": "{{count}} mês",
+      "months_plural": "{{count}} meses",
+      "years": "{{count}} ano",
+      "years_plural": "{{count}} anos"
+    },
+    "submit": "Enviar Solicitação",
+    "submitting": "Enviando Solicitação...",
+    "success": "Sua solicitação de acesso foi enviada e você será notificado sobre a decisão."
+  },
+  "panel": {
+    "title": "Concessões de Acesso",
+    "description": "Usuários com acesso por tempo limitado a este recurso",
+    "noGrants": "Nenhuma concessão de acesso para este recurso",
+    "noGrantsHint": "Os usuários podem solicitar acesso temporário usando o botão \"Solicitar Acesso\".",
+    "requestButton": "Solicitar Acesso",
+    "refresh": "Atualizar",
+    "activeGrants": "Concessões Ativas",
+    "pendingRequests": "Solicitações Pendentes",
+    "expiresAt": "Expira em",
+    "grantedAt": "Concedido em",
+    "requestedAt": "Solicitado em",
+    "revoke": "Revogar",
+    "revokeConfirm": "Tem certeza de que deseja revogar o acesso de {{user}}?",
+    "revokeSuccess": "Acesso revogado com sucesso",
+    "handle": "Gerenciar Solicitação"
+  },
+  "handle": {
+    "title": "Gerenciar Solicitação de Acesso",
+    "approve": "Aprovar",
+    "deny": "Negar",
+    "clarify": "Solicitar Esclarecimento",
+    "grantDuration": "Duração da Concessão",
+    "response": "Mensagem de Resposta",
+    "responsePlaceholder": "Forneça feedback ou informações adicionais...",
+    "approveSuccess": "Solicitação de acesso aprovada",
+    "denySuccess": "Solicitação de acesso negada",
+    "clarifySuccess": "Esclarecimento solicitado"
+  },
+  "entityTypes": {
+    "data_product": "produto de dados",
+    "dataset": "conjunto de dados",
+    "data_contract": "contrato de dados"
+  }
+}

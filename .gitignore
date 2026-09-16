@@ -54,3 +54,12 @@ licenses.csv
 
 .cursor/plans/
 docs/research/
+
+# Terraform artifacts
+**/.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Local Lab execution runtime state
+scripts/lab-renda-fixa/.state/

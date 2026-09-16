@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ontos-app
+  namespace: ontos
+  labels:
+    app: ontos-app
+    tier: frontend-backend
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: ontos-app
+  template:
+    metadata:
+      labels:
+        app: ontos-app
+        tier: frontend-backend
+    spec:
+      containers:
+        - name: ontos
+          image: ontos:lab
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: ontos-config
+            - secretRef:
+                name: ontos-secret
+          ports:
+            - containerPort: 8000
+              name: http
+          resources:
+            requests:
+              cpu: 200m
+              memory: 512Mi
+            limits:
+              cpu: 2000m
+              memory: 2Gi
+          startupProbe:
+            httpGet:
+              path: /api/health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 60
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3

@@ -1,0 +1,619 @@
+{
+  "personaNav": {
+    "home": "Início",
+    "marketplace": "Marketplace",
+    "dataCatalog": "Catálogo de Dados",
+    "businessGlossary": "Navegador de Conceitos",
+    "mySubscriptions": "Minhas Inscrições",
+    "accessRequests": "Solicitações de Acesso",
+    "dataProducts": "Produtos de Dados",
+    "dataContracts": "Contratos de Dados",
+    "dataAssets": "Ativos de Dados",
+    "qualityCompliance": "Qualidade & Conformidade",
+    "myConsumers": "Meus Consumidores",
+    "reviewsApprovals": "Revisões & Aprovações",
+    "assetExplorer": "Explorador de Ativos",
+    "compliance": "Conformidade",
+    "masterData": "Dados Mestres",
+    "catalogCommander": "Catalog Commander",
+    "domains": "Domínios",
+    "teams": "Equipes",
+    "ownership": "Propriedade",
+    "policies": "Políticas",
+    "workflows": "Fluxos de Trabalho",
+    "audit": "Trilha de Auditoria",
+    "estateManager": "Gerenciador de Estates",
+    "searchConcepts": "Pesquisar Conceitos",
+    "viewGraph": "Visualizar Grafo",
+    "searchGraph": "Pesquisar Grafo",
+    "assetTypes": "Tipos de Ativos",
+    "tags": "Tags",
+    "entitlements": "Privilégios e Direitos",
+    "securityFeatures": "Recursos de Segurança",
+    "entitlementsSync": "Sincronização de Privilégios",
+    "general": "Geral",
+    "uiCustomization": "Personalização da UI",
+    "connectors": "Conectores",
+    "schemaImporter": "Importador de Esquemas",
+    "jobs": "Jobs",
+    "deliveryModes": "Modos de Entrega",
+    "git": "Integração Git",
+    "appRoles": "Papéis do Aplicativo",
+    "businessRoles": "Papéis de Negócio",
+    "businessOwners": "Proprietários de Negócio",
+    "searchSettings": "Configurações de Pesquisa",
+    "mcpSettings": "Configurações MCP",
+    "collections": "Coleções",
+    "rdfSources": "Fontes RDF",
+    "about": "Sobre",
+    "hierarchyBrowser": "Navegador de Hierarquia"
+  },
+  "navGroups": {
+    "discover": "Descobrir",
+    "myData": "Meus Dados",
+    "build": "Construir",
+    "monitor": "Monitorar",
+    "tasks": "Tarefas",
+    "catalog": "Catálogo",
+    "govern": "Governar",
+    "tools": "Ferramentas",
+    "organize": "Organizar",
+    "standards": "Padrões",
+    "oversight": "Supervisão",
+    "advanced": "Avançado",
+    "accessControl": "Controle de Acesso",
+    "monitoring": "Monitoramento",
+    "configuration": "Configuração",
+    "automation": "Automação",
+    "access": "Acesso",
+    "system": "Sistema"
+  },
+  "personas": {
+    "data_consumer": "Consumidor de Dados",
+    "data_producer": "Produtor de Dados",
+    "data_steward": "Custodiante de Dados (Steward)",
+    "data_governance_officer": "Diretor de Governança de Dados",
+    "security_officer": "Oficial de Segurança",
+    "administrator": "Administrador"
+  },
+  "personaDescriptions": {
+    "data_consumer": "Navegar e se inscrever em produtos de dados",
+    "data_producer": "Construir, publicar e monitorar produtos de dados",
+    "data_steward": "Organizar catálogo e garantir qualidade de dados",
+    "data_governance_officer": "Políticas, domínios e propriedades",
+    "security_officer": "Controle de acesso e segurança",
+    "administrator": "Configuração e gestão do sistema"
+  },
+  "personaSwitcher": {
+    "switchPersona": "Alternar Persona",
+    "currentPersona": "Persona atual"
+  },
+  "title": "Configurações",
+  "tabs": {
+    "general": "Geral",
+    "databricks": "Databricks",
+    "git": "Git",
+    "delivery": "Modos de Entrega",
+    "jobs": "Jobs",
+    "audit": "Trilha de Auditoria",
+    "businessRoles": "Papéis de Negócio",
+    "deliveryMethods": "Métodos de Entrega",
+    "assetTypes": "Tipos de Ativos",
+    "dataDomains": "Domínios",
+    "teams": "Equipes",
+    "projects": "Projetos",
+    "roles": "Papéis",
+    "rdfSources": "Fontes RDF",
+    "tags": "Tags",
+    "search": "Pesquisa",
+    "mcpTokens": "Tokens MCP",
+    "workflows": "Fluxos de Trabalho",
+    "uiCustomization": "Personalização da UI",
+    "connectors": "Conectores",
+    "schemaImporter": "Importador de Esquemas"
+  },
+  "accessDenied": {
+    "title": "Acesso Negado",
+    "message": "Você não tem permissão para acessar a página de Configurações. Esta página é restrita a usuários com privilégios administrativos.",
+    "action": "Se você acredita que deveria ter acesso, entre em contato com seu administrador ou ",
+    "returnHome": "volte para a página inicial",
+    "requestRole": " para solicitar o papel apropriado."
+  },
+  "general": {
+    "title": "Configurações Gerais",
+    "description": "Configure os parâmetros básicos do aplicativo",
+    "unityCatalog": {
+      "title": "Unity Catalog",
+      "help": "Local do Unity Catalog para armazenamento dos dados da aplicação.",
+      "catalog": {
+        "label": "Catálogo",
+        "placeholder": "app_data"
+      },
+      "schema": {
+        "label": "Esquema",
+        "placeholder": "app_ontos"
+      },
+      "volume": {
+        "label": "Volume",
+        "placeholder": "app_files"
+      }
+    },
+    "auditLog": {
+      "label": "Diretório de Logs de Auditoria",
+      "placeholder": "audit_logs",
+      "help": "Diretório onde os arquivos de logs de auditoria são armazenados."
+    },
+    "backgroundJobs": {
+      "title": "Trabalhos em Segundo Plano",
+      "allowEnablementRequests": {
+        "label": "Permitir que usuários solicitem ativação de trabalhos em segundo plano",
+        "help": "Quando um usuário acessa um recurso cujo trabalho em segundo plano não está ativado, ele pode enviar uma notificação solicitando que o administrador o ative."
+      }
+    },
+    "llm": {
+      "title": "Configuração de IA / LLM",
+      "enabled": {
+        "label": "Habilitar Recursos de IA"
+      },
+      "endpoint": {
+        "label": "Endpoint do LLM",
+        "placeholder": "databricks-claude-sonnet-4-5",
+        "help": "Nome do endpoint servido no Databricks para o LLM."
+      },
+      "systemPrompt": {
+        "label": "Prompt do Sistema",
+        "placeholder": "Você é um Custodiante de Dados...",
+        "help": "Prompt do sistema que define o comportamento do assistente de IA."
+      },
+      "disclaimer": {
+        "label": "Texto do Aviso Legal",
+        "placeholder": "Este recurso utiliza inteligência artificial...",
+        "help": "Aviso legal exibido aos usuários ao utilizar recursos de IA."
+      }
+    },
+    "saveButton": "Salvar Configurações",
+    "messages": {
+      "saveSuccess": "Configurações salvas com sucesso",
+      "saveError": "Falha ao salvar configurações"
+    }
+  },
+  "databricks": {
+    "title": "Configurações do Databricks",
+    "description": "Defina as configurações de conexão com o Databricks",
+    "labels": {
+      "host": "Host",
+      "token": "Token",
+      "warehouseId": "ID do SQL Warehouse",
+      "catalog": "Catálogo",
+      "schema": "Esquema"
+    },
+    "placeholders": {
+      "host": "https://<seu-workspace>.cloud.databricks.com",
+      "token": "dapi...",
+      "warehouseId": "1234abcd5678efgh",
+      "catalog": "main",
+      "schema": "uc_swiss_knife"
+    }
+  },
+  "git": {
+    "title": "Configurações do Git",
+    "description": "Configure o repositório Git para armazenamento de arquivos YAML",
+    "labels": {
+      "repoUrl": "URL do Repositório",
+      "branch": "Branch",
+      "token": "Token"
+    },
+    "placeholders": {
+      "repoUrl": "https://github.com/sua-org/seu-repo.git",
+      "branch": "main",
+      "token": "ghp_... ou similar"
+    }
+  },
+  "nav": {
+    "groups": {
+      "configuration": "Configuração",
+      "integrations": "Integrações",
+      "operations": "Operações",
+      "accessControl": "Controle de Acesso",
+      "referenceData": "Dados de Referência"
+    }
+  },
+  "jobs": {
+    "title": "Configuração de Jobs",
+    "description": "Configure o cluster de jobs do Databricks e habilite fluxos de trabalho em segundo plano",
+    "jobClusterId": {
+      "label": "ID do Cluster de Jobs (opcional)",
+      "placeholder": "Deixe em branco para computação sem servidor (Serverless)"
+    },
+    "workspaceDeploymentPath": {
+      "label": "Caminho de Implantação no Workspace",
+      "placeholder": "/Workspace/Users/usuario@dominio.com/ontos-workflows",
+      "help": "Caminho no workspace Databricks onde os arquivos de fluxo são implantados para jobs em segundo plano.",
+      "requiredHint": "Defina o caminho de implantação acima para habilitar fluxos de trabalho."
+    },
+    "availableWorkflows": {
+      "label": "Fluxos de Trabalho Disponíveis",
+      "description": "Habilitar ou desabilitar fluxos em segundo plano"
+    },
+    "noWorkflows": "Nenhum fluxo de trabalho disponível",
+    "saveButton": "Salvar Configuração",
+    "messages": {
+      "saveSuccess": "Configurações salvas com sucesso",
+      "saveError": "Falha ao salvar configurações"
+    }
+  },
+  "jobsActions": {
+    "start": "Iniciar",
+    "stop": "Parar",
+    "pause": "Pausar agendamento",
+    "resume": "Retomar",
+    "history": "Ver histórico de execuções",
+    "cannotDisableRunning": "Não é possível desativar um fluxo em execução"
+  },
+  "jobRuns": {
+    "viewHistory": "Ver histórico de execuções",
+    "dialogTitle": "Histórico do Job: {{workflowName}}",
+    "dialogDescription": "Execuções recentes para este fluxo de trabalho",
+    "emptyState": "Nenhuma execução encontrada para este fluxo",
+    "runId": "ID da Execução",
+    "runName": "Nome",
+    "status": "Status",
+    "started": "Iniciado em",
+    "duration": "Duração",
+    "notified": "Notificado",
+    "statuses": {
+      "success": "Sucesso",
+      "failed": "Falhou",
+      "canceled": "Cancelado",
+      "timedout": "Tempo Esgotado",
+      "running": "Em Execução",
+      "pending": "Pendente",
+      "unknown": "Desconhecido"
+    }
+  },
+  "roles": {
+    "title": "Controle de Acesso Baseado em Papéis (RBAC)",
+    "description": "Defina papéis do aplicativo e atribua permissões a grupos de diretório.",
+    "table": {
+      "nameColumn": "Nome",
+      "descriptionColumn": "Descrição",
+      "assignedGroupsColumn": "Grupos Atribuídos",
+      "none": "Nenhum",
+      "assigned": "Atribuído",
+      "request": "Solicitar",
+      "requestTooltip": "Solicitar acesso a este papel",
+      "alreadyAssignedTooltip": "Você já possui este papel"
+    },
+    "dialog": {
+      "createTitle": "Criar Papel",
+      "editTitle": "Editar Papel: {{name}}",
+      "description": "Defina o nome do papel, grupos atribuídos, permissões de recursos e privilégios de aprovação."
+    },
+    "tabs": {
+      "general": "Geral",
+      "privileges": "Privilégios",
+      "permissions": "Permissões",
+      "deployment": "Implantação",
+      "accessControl": "Controle de Acesso"
+    },
+    "general": {
+      "roleName": "Nome do Papel",
+      "roleNameRequired": "O nome do papel é obrigatório",
+      "description": "Descrição",
+      "assignedGroups": "Grupos de Diretório Atribuídos (separados por vírgula)",
+      "assignedGroupsPlaceholder": "ex: data-stewards, finance-team",
+      "assignedGroupsHelp": "Usuários pertencentes a estes grupos herdarão as permissões deste papel."
+    },
+    "privileges": {
+      "homeSections": {
+        "title": "Seções da Página Inicial",
+        "description": "Selecione quais seções aparecem na tela inicial para usuários com este papel."
+      },
+      "approvalPrivileges": {
+        "title": "Privilégios de Aprovação",
+        "description": "Conceda a este papel a capacidade de aprovar tipos específicos de solicitações."
+      },
+      "allowedPersonas": {
+        "title": "Personas que este papel pode acessar",
+        "description": "Selecione quais visões de personas usuários com este papel podem alternar na interface."
+      }
+    },
+    "permissions": {
+      "featurePermissions": {
+        "title": "Permissões de Recursos",
+        "description": "Configure níveis de acesso para cada recurso do aplicativo."
+      },
+      "groups": {
+        "discover": "Descobrir",
+        "build": "Construir",
+        "govern": "Governar",
+        "deploy": "Implantar",
+        "settings": "Configurações",
+        "other": "Outros"
+      },
+      "crossCutting": "Segundo Plano",
+      "settingsSubGroups": {
+        "referenceData": "Dados de Referência",
+        "configuration": "Configuração",
+        "integrations": "Integrações",
+        "operations": "Operações",
+        "accessControl": "Controle de Acesso"
+      }
+    },
+    "deployment": {
+      "title": "Política de Implantação",
+      "description": "Controle em quais catálogos/esquemas do Unity Catalog usuários com este papel podem implantar. Suporta caracteres curinga (* para qualquer) e variáveis ({username}, {email}).",
+      "allowedCatalogs": {
+        "label": "Catálogos Permitidos (separados por vírgula)",
+        "placeholder": "ex: prod_catalog, {username}_sandbox, *",
+        "help": "Deixe em branco para impedir implantações. Use * para permitir todos os catálogos."
+      },
+      "allowedSchemas": {
+        "label": "Esquemas Permitidos (separados por vírgula, opcional)",
+        "placeholder": "ex: dev, {username}_schema, *",
+        "help": "Deixe em branco para permitir qualquer esquema dentro dos catálogos autorizados."
+      },
+      "defaultCatalog": {
+        "label": "Catálogo Padrão",
+        "placeholder": "ex: {username}_sandbox",
+        "help": "Pré-selecionado na interface"
+      },
+      "defaultSchema": {
+        "label": "Esquema Padrão",
+        "placeholder": "ex: default",
+        "help": "Pré-selecionado na interface"
+      },
+      "requireApproval": "Exigir aprovação para implantações",
+      "canApprove": "Pode aprovar solicitações de implantação"
+    },
+    "accessControl": {
+      "requestableBy": {
+        "title": "Quem pode solicitar este papel?",
+        "description": "Selecione quais papéis têm permissão para solicitar acesso a este papel."
+      },
+      "approvers": {
+        "title": "Quem pode aprovar solicitações para este papel?",
+        "description": "Selecione quais papéis podem aprovar solicitações para este papel.",
+        "hint": "Se nenhum aprovador for selecionado, as solicitações serão enviadas ao Administrador por padrão."
+      },
+      "noRole": "Usuários sem papel (novos usuários)",
+      "noRolesAvailable": "Nenhum outro papel disponível",
+      "defaultApprover": "Padrão"
+    },
+    "actions": {
+      "cancel": "Cancelar",
+      "create": "Criar Papel",
+      "update": "Atualizar Papel",
+      "addRole": "Adicionar Papel",
+      "actions": "Ações",
+      "editRole": "Editar Papel",
+      "deleteRole": "Excluir Papel"
+    }
+  },
+  "mcpTokens": {
+    "title": "Tokens da API MCP",
+    "description": "Gerencie tokens de API para integrações de assistentes de IA via Model Context Protocol",
+    "refresh": "Atualizar",
+    "createToken": "Criar Token",
+    "showRevokedTokens": "Exibir tokens revogados",
+    "emptyState": {
+      "title": "Nenhum token MCP ainda",
+      "description": "Crie um token para permitir que assistentes de IA acessem suas ferramentas"
+    },
+    "table": {
+      "name": "Nome",
+      "scopes": "Escopos",
+      "created": "Criado em",
+      "lastUsed": "Último Uso",
+      "expires": "Expira em",
+      "status": "Status",
+      "actions": "Ações",
+      "never": "Nunca",
+      "moreScopes": "+{{count}} mais",
+      "createdBy": "por {{name}}"
+    },
+    "status": {
+      "active": "Ativo",
+      "revoked": "Revogado",
+      "expired": "Expirado"
+    },
+    "tooltips": {
+      "revokeToken": "Revogar token"
+    },
+    "info": {
+      "title": "Usando Tokens MCP",
+      "description": "Tokens MCP permitem que assistentes de IA interajam com sua plataforma de governança. Cada token possui escopos específicos.",
+      "endpoint": "Endpoint:",
+      "header": "Cabeçalho:"
+    },
+    "createDialog": {
+      "title": "Criar Token MCP",
+      "description": "Crie um novo token de API para assistentes de IA. O token será exibido apenas uma vez.",
+      "tokenName": "Nome do Token",
+      "tokenNamePlaceholder": "ex: Assistente Claude - Equipe de Análise",
+      "tokenNameHelp": "Um nome descritivo para identificar este token",
+      "expiration": "Expiração (dias)",
+      "expirationHelp": "Deixe em branco para não expirar",
+      "scopes": "Escopos",
+      "scopesHelp": "Selecione as permissões que este token deve possuir",
+      "selectedScopes": "Selecionados:",
+      "cancel": "Cancelar",
+      "create": "Criar Token",
+      "creating": "Criando..."
+    },
+    "createdDialog": {
+      "title": "Token Criado com Sucesso",
+      "warning": "Copie este token agora — ele não será mostrado novamente!",
+      "tokenName": "Nome do Token",
+      "apiToken": "Token da API",
+      "scopes": "Escopos",
+      "expires": "Expira em",
+      "copy": "Copiar",
+      "copied": "Copiado!",
+      "done": "Concluído"
+    },
+    "revokeDialog": {
+      "title": "Revogar Token?",
+      "description": "Tem certeza de que deseja revogar o token",
+      "warning": "Esta ação não pode ser desfeita. Assistentes de IA que utilizam este token perderão o acesso imediatamente.",
+      "cancel": "Cancelar",
+      "revoke": "Revogar Token"
+    },
+    "messages": {
+      "loadError": "Falha ao carregar tokens MCP",
+      "tokenNameRequired": "O nome do token é obrigatório",
+      "scopeRequired": "Pelo menos um escopo é obrigatório",
+      "createError": "Falha ao criar token",
+      "copied": "Token copiado para a área de transferência",
+      "revoked": "Token \"{{name}}\" foi revogado",
+      "revokeError": "Falha ao revogar token"
+    }
+  },
+  "uiCustomization": {
+    "title": "Personalização da UI",
+    "description": "Personalize a identidade visual, configurações de idioma e aparência da aplicação.",
+    "i18n": {
+      "title": "Configurações de Idioma",
+      "enableLabel": "Habilitar Internacionalização",
+      "enableDescription": "Quando desativado, o aplicativo sempre usará inglês, independentemente das configurações do navegador."
+    },
+    "logo": {
+      "title": "Logo Personalizado",
+      "urlLabel": "URL do Logo",
+      "urlPlaceholder": "https://exemplo.com/logo.svg",
+      "help": "Insira a URL do seu logotipo personalizado. Suporta formatos SVG, PNG ou JPG. Tamanho recomendado: 40x40 pixels.",
+      "invalidUrl": "Por favor, insira uma URL HTTP ou HTTPS válida",
+      "preview": "Pré-visualização:",
+      "loadError": "Falha ao carregar a imagem",
+      "openInNewTab": "Abrir em nova aba"
+    },
+    "about": {
+      "title": "Conteúdo Personalizado da Página Sobre",
+      "description": "Substitua o conteúdo padrão da página Sobre por Markdown personalizado. Deixe em branco para usar o conteúdo padrão.",
+      "editTab": "Editar",
+      "previewTab": "Pré-visualizar",
+      "placeholder": "# Sobre Nossa Empresa\n\nEscreva seu conteúdo personalizado aqui usando **Markdown**...",
+      "noContent": "Nenhum conteúdo personalizado. A página Sobre padrão será exibida."
+    },
+    "css": {
+      "title": "Folha de Estilos Personalizada",
+      "warningTitle": "Use com cuidado",
+      "warningDescription": "CSS inválido ou conflitante pode quebrar a interface. Se o aplicativo ficar inutilizável, limpe este campo para restaurar a funcionalidade normal. As alterações exigem recarregar a página.",
+      "label": "CSS Personalizado",
+      "placeholder": "/* Sobrescrever variáveis CSS */\n:root {\n  --primary: 220 70% 50%;\n}\n\n/* Estilos personalizados */\n.minha-classe {\n  color: red;\n}",
+      "help": "Insira CSS personalizado para substituir o tema padrão."
+    },
+    "saveButton": "Salvar Configurações da UI",
+    "messages": {
+      "saveSuccess": "Configurações de personalização salvas",
+      "saveError": "Falha ao salvar configurações de personalização",
+      "reloadRequired": "Recarregue a página para visualizar todas as alterações."
+    }
+  },
+  "connectors": {
+    "title": "Conexões",
+    "description": "Gerencie conexões com plataformas de dados externas para descoberta de ativos e recuperação de metadados.",
+    "addConnection": "Adicionar Conexão",
+    "testConnection": "Testar Conexão",
+    "editTitle": "Editar Conexão",
+    "editDescription": "Atualize as configurações de conexão.",
+    "createTitle": "Nova Conexão",
+    "createDescription": "Configure uma nova conexão com uma plataforma de dados externa.",
+    "deleteTitle": "Excluir Conexão",
+    "deleteDescription": "Tem certeza de que deseja excluir esta conexão? Esta ação não pode ser desfeita.",
+    "columns": {
+      "name": "Nome",
+      "type": "Tipo",
+      "description": "Descrição",
+      "status": "Status",
+      "updated": "Atualizado em"
+    },
+    "form": {
+      "connectorType": "Tipo de Conector",
+      "name": "Nome",
+      "description": "Descrição",
+      "enabled": "Habilitado",
+      "isDefault": "Padrão"
+    },
+    "bigquery": {
+      "configTitle": "Configuração do BigQuery",
+      "ucConnectionName": "Nome da Conexão UC",
+      "ucConnectionNameHelp": "Opcional. Fornece ID do projeto GCP a partir de metadados de conexão UC.",
+      "projectId": "ID do Projeto GCP",
+      "projectIdHelp": "Opcional. Derivado das credenciais caso não seja informado.",
+      "location": "Localização",
+      "locationHelp": "ex: US, EU, us-central1",
+      "authSectionTitle": "Autenticação",
+      "authSectionHelp": "Armazene a chave de conta de serviço GCP (JSON) como Databricks Secret.",
+      "secretScope": "Escopo do Secret",
+      "secretKey": "Chave do Secret",
+      "credentialsPath": "Caminho do Arquivo de Credenciais",
+      "credentialsPathHelp": "Fallback para dev: caminho local para arquivo JSON da conta de serviço."
+    },
+    "snowflake": {
+      "configTitle": "Configuração do Snowflake",
+      "account": "Identificador da Conta",
+      "accountHelp": "ex: minhaorg-minhaconta ou xy12345.us-east-1",
+      "user": "Usuário",
+      "warehouse": "Warehouse",
+      "role": "Papel",
+      "roleHelp": "Opcional. Papel a ser assumido para consultas.",
+      "database": "Banco de Dados Padrão",
+      "defaultSchema": "Esquema Padrão"
+    },
+    "databricks": {
+      "systemNote": "Esta conexão é configurada automaticamente pelas variáveis de ambiente e não pode ser modificada."
+    },
+    "messages": {
+      "saveSuccess": "Conexão salva",
+      "saveError": "Falha ao salvar conexão",
+      "testSuccess": "Conexão bem-sucedida",
+      "testFailed": "Falha na conexão",
+      "testError": "Erro no teste de conexão",
+      "deleteSuccess": "Conexão excluída"
+    }
+  },
+  "schemaImporter": {
+    "title": "Importador de Esquemas",
+    "description": "Navegue por sistemas remotos e importe suas estruturas como ativos do {{appName}}."
+  },
+  "assetBulk": {
+    "title": "Importação / Exportação de Ativos",
+    "description": "Exporte ativos para CSV/Excel para edição offline ou importe ativos a partir de um arquivo.",
+    "exportTab": "Exportar",
+    "importTab": "Importar",
+    "exportSettings": "Configurações de Exportação",
+    "format": "Formato",
+    "scope": "Escopo",
+    "allAssetTypes": "Todos os tipos de ativos",
+    "exportAssets": "Exportar Ativos",
+    "exporting": "Exportando...",
+    "downloadTemplate": "Baixar Modelo",
+    "exportSuccess": "Exportação Concluída com Sucesso",
+    "exportFailed": "Falha na Exportação",
+    "templateDownloaded": "Modelo Baixado",
+    "selectFile": "Selecionar Arquivo",
+    "preview": "Pré-visualizar",
+    "previewFailed": "Falha na Pré-visualização",
+    "importButton": "Importar",
+    "importing": "Importando...",
+    "importAssets": "Importar {count} ativo(s)",
+    "importSuccess": "Importação Concluída com Sucesso",
+    "importFailed": "Falha na Importação",
+    "importWithErrors": "Importação Concluída com Erros",
+    "importComplete": "Importação concluída: {created} criado(s), {updated} atualizado(s), {errors} erro(s).",
+    "close": "Fechar",
+    "row": "Linha",
+    "name": "Nome",
+    "type": "Tipo",
+    "action": "Ação",
+    "message": "Mensagem",
+    "create": "Criar",
+    "update": "Atualizar",
+    "skip": "Ignorar",
+    "error": "Erro",
+    "importExport": "Importação / Exportação",
+    "exportHelp": "O arquivo de exportação inclui todos os campos para cada ativo. Você pode editá-lo offline e reimportar.",
+    "templateHelp": "O modelo fornece uma planilha limpa com os cabeçalhos corretos e uma linha de exemplo."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "title": "Proprietários de Negócio",
+  "subtitle": "Atribuições de propriedade para rastrear quem é responsável por cada objeto.",
+  "addNew": "Atribuir Proprietário",
+  "editOwner": "Editar Atribuição",
+  "removeOwner": "Remover Proprietário",
+  "table": {
+    "object": "Objeto",
+    "objectType": "Tipo de Objeto",
+    "owner": "Proprietário",
+    "role": "Papel",
+    "status": "Status",
+    "assignedAt": "Atribuído em",
+    "removedAt": "Removido em",
+    "actions": "Ações"
+  },
+  "objectTypes": {
+    "data_product": "Produto de Dados",
+    "data_contract": "Contrato de Dados",
+    "dataset": "Conjunto de Dados",
+    "data_domain": "Domínio de Dados",
+    "business_term": "Termo de Negócio",
+    "policy": "Política",
+    "asset": "Ativo",
+    "tag": "Tag"
+  },
+  "statusLabels": {
+    "active": "Ativo",
+    "inactive": "Inativo"
+  },
+  "permissions": {
+    "deniedView": "Você não tem permissão para visualizar proprietários de negócio.",
+    "deniedCreate": "Você não tem permissão para atribuir proprietários.",
+    "deniedEdit": "Você não tem permissão para editar atribuições de proprietário.",
+    "deniedDelete": "Você não tem permissão para remover proprietários.",
+    "permissionDenied": "Permissão Negada"
+  },
+  "messages": {
+    "errorFetching": "Erro ao buscar proprietários de negócio",
+    "errorRemoving": "Erro ao remover proprietário de negócio",
+    "removed": "Proprietário Removido",
+    "removedSuccess": "A atribuição de propriedade foi removida com sucesso.",
+    "errorLoadingData": "Erro ao Carregar Dados"
+  },
+  "removeDialog": {
+    "title": "Remover Proprietário?",
+    "description": "Isso desativará a atribuição de propriedade. O histórico será preservado.",
+    "reasonLabel": "Motivo (opcional)",
+    "reasonPlaceholder": "Informe o motivo da remoção...",
+    "cancel": "Cancelar",
+    "remove": "Remover"
+  },
+  "emptyState": {
+    "title": "Nenhuma atribuição de propriedade ainda",
+    "description": "Atribua proprietários de negócio a produtos de dados, contratos e outros objetos."
+  },
+  "panel": {
+    "title": "Proprietários",
+    "currentOwners": "Proprietários Atuais",
+    "previousOwners": "Proprietários Anteriores"
+  }
+}

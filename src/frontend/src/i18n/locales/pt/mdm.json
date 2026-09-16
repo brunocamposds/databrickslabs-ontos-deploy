@@ -1,0 +1,68 @@
+{
+  "title": "Gerenciamento de Dados Mestres (MDM)",
+  "subtitle": "Defina contratos de dados mestres e gerencie a correspondência de entidades entre sistemas",
+  "newConfiguration": "Nova Configuração de MDM",
+  "configurations": "Configurações de MDM",
+  "noConfigurations": "Nenhuma configuração de MDM ainda.",
+  "getStarted": "Crie sua primeira configuração para começar.",
+  "sources": "fontes",
+  "lastRun": "Última Execução",
+  "stats": {
+    "matchingRuns": "Execuções de Correspondência",
+    "totalMatches": "Total de Correspondências",
+    "newRecords": "Novos Registros",
+    "pendingReview": "Revisão Pendente"
+  },
+  "configDetails": {
+    "title": "Detalhes da Configuração",
+    "selectConfig": "Selecione uma configuração para ver detalhes",
+    "startMatching": "Iniciar Correspondência",
+    "editRules": "Editar Regras de MDM",
+    "linkSource": "Vincular Contrato de Origem",
+    "deleteConfig": "Excluir Configuração"
+  },
+  "tabs": {
+    "overview": "Visão Geral",
+    "sources": "Fontes",
+    "matchingRules": "Regras de Correspondência",
+    "matchingRuns": "Execuções de Correspondência",
+    "reviewQueue": "Fila de Revisão"
+  },
+  "overview": {
+    "description": "Descrição",
+    "entityType": "Tipo de Entidade",
+    "goldenRecordTarget": "Destino do Registro Ouro (Golden Record)"
+  },
+  "sourcesTab": {
+    "title": "Fontes Vinculadas",
+    "dataContract": "Contrato de Dados",
+    "keyColumn": "Coluna Chave",
+    "matchColumns": "Colunas de Correspondência",
+    "noSources": "Nenhum contrato de origem vinculado ainda."
+  },
+  "rulesTab": {
+    "title": "Regras de Correspondência",
+    "noRules": "Nenhuma regra de correspondência configurada ainda.",
+    "matchingRulesButton": "Editar Regras de MDM",
+    "description": "Configure as regras usadas para identificar e reconciliar registros duplicados."
+  },
+  "runsTab": {
+    "title": "Histórico de Execuções de Correspondência",
+    "runId": "ID da Execução",
+    "status": "Status",
+    "matchesFound": "Correspondências Encontradas",
+    "newRecords": "Novos Registros",
+    "pendingReview": "Revisão Pendente",
+    "noRuns": "Nenhuma execução ainda. Inicie um trabalho de correspondência para ver resultados.",
+    "selectRun": "Selecione uma execução para ver candidatos"
+  },
+  "candidates": {
+    "title": "Candidatos a Correspondência",
+    "noCandidates": "Nenhum candidato a correspondência encontrado para esta execução.",
+    "matchScore": "Pontuação",
+    "status": "Status",
+    "actions": "Ações",
+    "approve": "Aprovar",
+    "reject": "Rejeitar"
+  }
+}

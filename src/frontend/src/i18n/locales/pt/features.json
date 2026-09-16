@@ -1,0 +1,62 @@
+{
+  "data-domains": {
+    "name": "Domínios",
+    "description": "Organizar produtos de dados e ativos em domínios lógicos."
+  },
+  "datasets": {
+    "name": "Conjuntos de Dados",
+    "description": "Gerenciar conjuntos de dados e suas implementações físicas em vários ambientes."
+  },
+  "teams": {
+    "name": "Equipes",
+    "description": "Gerenciar equipes e membros com sobreposições de papéis."
+  },
+  "projects": {
+    "name": "Projetos",
+    "description": "Gerenciar projetos e atribuir equipes para isolamento de workspace."
+  },
+  "data-contracts": {
+    "name": "Contratos",
+    "description": "Definir e aplicar padrões de metadados técnicos."
+  },
+  "data-products": {
+    "name": "Produtos",
+    "description": "Agrupar e gerenciar ativos relacionados do Databricks com tags."
+  },
+  "concepts": {
+    "name": "Conceitos",
+    "description": "Navegar, pesquisar e gerenciar conceitos de negócio, coleções e hierarquias."
+  },
+  "semantic-models": {
+    "name": "Navegador de Conceitos",
+    "description": "Explorar termos do glosário de negócios, conceitos e suas relações."
+  },
+  "collections": {
+    "name": "Coleções de Conceitos",
+    "description": "Organizar conceitos e ativos em coleções lógicas."
+  },
+  "process-workflows": {
+    "name": "Fluxos de Trabalho",
+    "description": "Configurar fluxos automatizados para validação, aprovação e notificações."
+  },
+  "data-asset-reviews": {
+    "name": "Revisões de Ativos",
+    "description": "Revisar e aprovar ativos do Databricks como tabelas, visualizações e funções."
+  },
+  "compliance": {
+    "name": "Conformidade",
+    "description": "Criar, verificar regras de conformidade e calcular pontuações."
+  },
+  "estate-manager": {
+    "name": "Gerenciador de Estates",
+    "description": "Gerenciar múltiplas instâncias do Databricks entre regiões e nuvens."
+  },
+  "master-data": {
+    "name": "Gerenciamento de Dados Mestres",
+    "description": "Construir o registro ouro (golden record) dos seus dados."
+  },
+  "catalog-commander": {
+    "name": "Catalog Commander",
+    "description": "Explorador de catálogos lado a lado para gerenciamento de ativos."
+  }
+}

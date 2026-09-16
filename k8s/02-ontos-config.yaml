@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ontos-config
+  namespace: ontos
+data:
+  # General application settings
+  ENV: "LOCAL"
+  DEBUG: "true"
+  LOG_LEVEL: "INFO"
+  APP_AUDIT_LOG_DIR: "audit_logs"
+
+  # Database configuration
+  PGHOST: "postgres"
+  PGPORT: "5432"
+  PGDATABASE: "app_ontos"
+  PGUSER: "ontos_app_user"
+  PGSCHEMA: "app_ontos"
+  DB_USE_PASSWORD_AUTH: "true"
+
+  # Databricks settings (mocked for isolated lab)
+  DATABRICKS_HOST: "https://mock.databricks.local"
+  DATABRICKS_WAREHOUSE_ID: "mock_warehouse_lab"
+  DATABRICKS_CATALOG: "app_ontos"
+  DATABRICKS_SCHEMA: "app_ontos"
+  MOCK_WORKSPACE_CLIENT: "true"
+
+  # User Mock & Permissions for Lab
+  MOCK_USER_DETAILS: "true"
+  MOCK_USER_EMAIL: "admin@ontos.local"
+  MOCK_USER_NAME: "Ontos Admin"
+  MOCK_USER_GROUPS: '["admins"]'
+  APP_ADMIN_DEFAULT_GROUPS: '["admins"]'
+
+  # Demo Mode
+  APP_DEMO_MODE: "true"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ontos-secret
+  namespace: ontos
+type: Opaque
+stringData:
+  PGPASSWORD: "ontos_lab_password"
+  POSTGRES_PASSWORD: "ontos_lab_password"

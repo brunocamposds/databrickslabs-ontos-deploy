@@ -1,0 +1,75 @@
+{
+  "title": "Gerenciador de Estates",
+  "subtitle": "Gerencie seus estates de dados e sincronização",
+  "newEstate": "Novo Estate",
+  "addEstate": "Adicionar Estate",
+  "editEstate": "Editar Estate",
+  "searchPlaceholder": "Pesquisar estates...",
+  "loading": "Carregando estates...",
+  "errors": {
+    "fetchEstates": "Erro ao Buscar Estates",
+    "couldNotLoad": "Não foi possível carregar os estates.",
+    "savingEstate": "Erro ao Salvar Estate",
+    "deletingEstate": "Erro ao Excluir Estate",
+    "triggeringSync": "Erro ao Disparar Sincronização",
+    "validationError": "Erro de Validação",
+    "validationMessage": "Por favor, preencha todos os campos obrigatórios: Nome, Descrição, URL do Workspace, Nome do Metastore, Provedor Cloud e Tipo de Conexão."
+  },
+  "toast": {
+    "estateCreated": "Estate criado com sucesso",
+    "estateUpdated": "Estate atualizado com sucesso",
+    "estateDeleted": "Estate excluído com sucesso",
+    "triggeringSync": "Disparando Sincronização",
+    "syncRequested": "Solicitando sincronização para o estate...",
+    "syncTriggered": "Sincronização disparada com sucesso. Atualizando dados..."
+  },
+  "form": {
+    "createTitle": "Adicionar Novo Estate",
+    "editTitle": "Editar Estate",
+    "dialogDescription": "Configure a conexão do estate Databricks e parâmetros básicos. Políticas de compartilhamento são gerenciadas na página de detalhes.",
+    "name": "Nome",
+    "description": "Descrição",
+    "type": "Tipo",
+    "workspaceUrl": "URL do Workspace",
+    "cloud": "Provedor Cloud",
+    "selectCloudProvider": "Selecione o provedor cloud",
+    "connectionType": "Tipo de Conexão",
+    "selectConnectionType": "Selecione o tipo de conexão",
+    "connectionString": "String de Conexão",
+    "metastoreName": "Nome do Metastore",
+    "syncSchedule": "Agendamento de Sincronização",
+    "enableSync": "Habilitar Sincronização",
+    "cancel": "Cancelar",
+    "save": "Salvar"
+  },
+  "connectionTypes": {
+    "deltaShare": "Delta Sharing",
+    "unityCatalog": "Unity Catalog",
+    "database": "Banco de Dados (Uso Futuro)"
+  },
+  "table": {
+    "name": "Nome",
+    "workspaceUrl": "URL do Workspace",
+    "cloud": "Cloud",
+    "connection": "Conexão",
+    "metastore": "Metastore",
+    "syncStatus": "Status de Sincronização",
+    "lastSync": "Última Sincronização",
+    "type": "Tipo",
+    "status": "Status",
+    "assets": "Ativos",
+    "actions": "Ações"
+  },
+  "statuses": {
+    "success": "Sucesso",
+    "failed": "Falha",
+    "in_progress": "Em Andamento",
+    "unknown": "Desconhecido"
+  },
+  "deleteDialog": {
+    "title": "Excluir Estate?",
+    "description": "Tem certeza de que deseja excluir este estate? Esta ação não pode ser desfeita.",
+    "cancel": "Cancelar",
+    "delete": "Excluir"
+  }
+}

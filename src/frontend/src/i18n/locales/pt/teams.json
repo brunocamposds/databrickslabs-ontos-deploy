@@ -1,0 +1,69 @@
+{
+  "title": "Equipes",
+  "subtitle": "Gerencie equipes e seus membros em toda a sua organização.",
+  "addNewTeam": "Adicionar Nova Equipe",
+  "editTeam": "Editar Equipe",
+  "deleteTeam": "Excluir Equipe",
+  "showingTeamsForProject": "Mostrando equipes para o projeto:",
+  "form": {
+    "dialog": {
+      "createTitle": "Criar Nova Equipe",
+      "editTitle": "Editar Equipe",
+      "createDescription": "Crie uma nova equipe com membros e sobreposições de papéis.",
+      "editDescription": "Atualize os detalhes e membros da equipe."
+    },
+    "sections": {
+      "info": "Informações da Equipe",
+      "members": "Membros da Equipe",
+      "tags": "Tags"
+    },
+    "labels": {
+      "name": "Nome da Equipe *",
+      "title": "Título de Exibição",
+      "description": "Descrição",
+      "domain": "Domínio de Dados",
+      "type": "Tipo",
+      "identifier": "E-mail / Nome do Grupo",
+      "roleOverride": "Sobreposição de Papel",
+      "noOverride": "Sem sobreposição"
+    },
+    "placeholders": {
+      "name": "Digite o nome da equipe",
+      "title": "Digite o título de exibição (opcional)",
+      "description": "Digite a descrição da equipe (opcional)",
+      "selectDomain": "Selecione um domínio de dados (opcional)",
+      "userEmail": "usuario@exemplo.com",
+      "groupName": "nome-do-grupo",
+      "noMembersHelp": "Nenhum membro adicionado ainda. Clique em \"Adicionar Membro\" para começar a montar sua equipe.",
+      "tagSearch": "Pesquisar e selecionar tags para esta equipe..."
+    },
+    "memberTypes": {
+      "user": "Usuário",
+      "group": "Grupo"
+    },
+    "buttons": {
+      "addMember": "Adicionar Membro",
+      "removeMember": "Remover Membro",
+      "update": "Atualizar Equipe",
+      "create": "Criar Equipe"
+    },
+    "toasts": {
+      "createdTitle": "Equipe Criada",
+      "updatedTitle": "Equipe Atualizada",
+      "createdDescription": "A equipe \"{{name}}\" foi criada com sucesso.",
+      "updatedDescription": "A equipe \"{{name}}\" foi atualizada com sucesso.",
+      "createFailedTitle": "Falha ao Criar Equipe",
+      "updateFailedTitle": "Falha ao Atualizar Equipe",
+      "failedDescription": "Ocorreu um erro inesperado."
+    }
+  },
+  "table": {
+    "name": "Nome",
+    "title": "Título",
+    "domain": "Domínio",
+    "members": "Membros",
+    "tags": "Tags",
+    "updated": "Atualizado em",
+    "actions": "Ações"
+  }
+}

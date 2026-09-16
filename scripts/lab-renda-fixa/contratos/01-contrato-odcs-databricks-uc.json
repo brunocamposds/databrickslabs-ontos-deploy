@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "apiVersion": "v3.1.0",
+  "kind": "DataContract",
+  "id": "contrato-odcs-renda-fixa-databricks-uc-001",
+  "name": "Contrato de Dados - Posição e Movimentação de Renda Fixa (Databricks UC)",
+  "version": "1.0.0",
+  "status": "active",
+  "tenant": "MesaDeOperacoesMercadoDeCapitais",
+  "domain": "Capital Markets",
+  "dataProduct": "Produto de Dados - Renda Fixa 360",
+  "description": {
+    "purpose": "Prover tabelas analíticas Delta curadas e governadas no Databricks Unity Catalog para relatórios de custódia, cálculos de rentabilidade, marcação a mercado (MtM) e auditoria de movimentações.",
+    "usage": "Consumo por pipelines analíticos Databricks, notebooks de engenharia financeira, dashboards executivos e conciliação regulatória.",
+    "limitations": "Carga D+1 após o fechamento dos sistemas legados de custódia (CETIP/Selic) às 21:00 BRT."
+  },
+  "tags": [
+    "renda-fixa",
+    "databricks-uc",
+    "posicao",
+    "movimentacao",
+    "custodia",
+    "delta-lake"
+  ],
+  "servers": [
+    {
+      "server": "databricks-unity-catalog-prod",
+      "type": "databricks",
+      "host": "adb-investimentos.azuredatabricks.net",
+      "catalog": "prod_investimentos",
+      "schema": "renda_fixa"
+    }
+  ],
+  "slaProperties": [
+    {
+      "property": "frequenciaAtualizacao",
+      "value": "Diária (D+1 até as 06:00 BRT)",
+      "unit": "dias"
+    },
+    {
+      "property": "disponibilidade",
+      "value": "99.95%",
+      "unit": "porcentagem"
+    },
+    {
+      "property": "tempoRetencaoHistorica",
+      "value": "10",
+      "unit": "anos"
+    }
+  ],
+  "schema": [
+    {
+      "name": "posicao_titulos_renda_fixa",
+      "physicalName": "posicao_titulos_renda_fixa",
+      "physicalType": "table",
+      "businessName": "Posição Diária de Títulos de Renda Fixa",
+      "description": "Tabela analítica Delta contendo o saldo, quantidade, preço unitário e valor atualizado por cliente e título.",
+      "properties": [
+        {
+          "name": "id_posicao",
+          "physicalName": "id_posicao",
+          "logicalType": "string",
+          "physicalType": "string",
+          "primaryKey": true,
+          "required": true,
+          "businessName": "Identificador da Posição",
+          "description": "Chave primária surrogate da posição na data de referência."
+        },
+        {
+          "name": "data_referencia",
+          "physicalName": "dt_referencia",
+          "logicalType": "date",
+          "physicalType": "date",
+          "required": true,
+          "partitioned": true,
+          "businessName": "Data de Referência",
+          "description": "Data contábil de apuração do saldo do ativo."
+        },
+        {
+          "name": "id_cliente",
+          "physicalName": "id_cliente",
+          "logicalType": "string",
+          "physicalType": "string",
+          "required": true,
+          "businessName": "Código do Cliente",
+          "description": "Identificador único do investidor no cadastro central."
+        },
+        {
+          "name": "codigo_isin",
+          "physicalName": "cd_isin",
+          "logicalType": "string",
+          "physicalType": "string",
+          "required": true,
+          "businessName": "Código ISIN",
+          "description": "Código ISO 6166 do título de renda fixa.",
+          "quality": [
+            {
+              "name": "formato_isin",
+              "type": "library",
+              "rule": "regexMatch",
+              "severity": "error",
+              "pattern": "^[A-Z]{2}[A-Z0-9]{9}[0-9]$"
+            }
+          ]
+        },
+        {
+          "name": "quantidade_custodia",
+          "physicalName": "qtd_custodia",
+          "logicalType": "number",
+          "physicalType": "decimal(18,6)",
+          "required": true,
+          "businessName": "Quantidade em Custódia",
+          "description": "Número de cotas ou unidades do título detidas pelo investidor.",
+          "quality": [
+            {
+              "name": "quantidade_positiva",
+              "type": "library",
+              "rule": "rangeCheck",
+              "severity": "error",
+              "mustBeGt": "0"
+            }
+          ]
+        },
+        {
+          "name": "preco_unitario_mtm",
+          "physicalName": "vl_pu_mtm",
+          "logicalType": "number",
+          "physicalType": "decimal(18,6)",
+          "required": true,
+          "businessName": "Preço Unitário (MtM)",
+          "description": "Preço Unitário de marcação a mercado no fechamento da data de referência."
+        },
+        {
+          "name": "valor_bruto_atualizado",
+          "physicalName": "vl_bruto_atualizado",
+          "logicalType": "number",
+          "physicalType": "decimal(18,2)",
+          "required": true,
+          "businessName": "Valor Bruto Atualizado (R$)",
+          "description": "Valor financeiro total do ativo (Quantidade * PU)."
+        }
+      ]
+    },
+    {
+      "name": "movimentacao_titulos_renda_fixa",
+      "physicalName": "movimentacao_titulos_renda_fixa",
+      "physicalType": "table",
+      "businessName": "Movimentações e Operações de Renda Fixa",
+      "description": "Tabela de transações de compra, venda, resgate, cupom de juros e amortizações.",
+      "properties": [
+        {
+          "name": "id_movimentacao",
+          "physicalName": "id_movimentacao",
+          "logicalType": "string",
+          "physicalType": "string",
+          "primaryKey": true,
+          "required": true,
+          "businessName": "Identificador da Movimentação",
+          "description": "ID exclusivo da operação financeira."
+        },
+        {
+          "name": "data_operacao",
+          "physicalName": "dt_operacao",
+          "logicalType": "date",
+          "physicalType": "date",
+          "required": true,
+          "businessName": "Data da Operação",
+          "description": "Data em que a ordem de compra ou venda foi executada."
+        },
+        {
+          "name": "data_liquidacao",
+          "physicalName": "dt_liquidacao",
+          "logicalType": "date",
+          "physicalType": "date",
+          "required": true,
+          "businessName": "Data de Liquidação Financeira",
+          "description": "Data efetiva da liquidação financeira (D+1 ou D+2)."
+        },
+        {
+          "name": "id_cliente",
+          "physicalName": "id_cliente",
+          "logicalType": "string",
+          "physicalType": "string",
+          "required": true,
+          "businessName": "Código do Cliente",
+          "description": "Identificador do cliente na transação."
+        },
+        {
+          "name": "codigo_isin",
+          "physicalName": "cd_isin",
+          "logicalType": "string",
+          "physicalType": "string",
+          "required": true,
+          "businessName": "Código ISIN",
+          "description": "Código do título transacionado."
+        },
+        {
+          "name": "tipo_operacao",
+          "physicalName": "tp_operacao",
+          "logicalType": "string",
+          "physicalType": "string",
+          "required": true,
+          "businessName": "Tipo de Operação",
+          "description": "Natureza do lançamento: COMPRA, VENDA, AMORTIZACAO, PAGAMENTO_JUROS, RESGATE."
+        },
+        {
+          "name": "quantidade_operada",
+          "physicalName": "qtd_operada",
+          "logicalType": "number",
+          "physicalType": "decimal(18,6)",
+          "required": true,
+          "businessName": "Quantidade Operada",
+          "description": "Volume de cotas ou títulos transacionados."
+        },
+        {
+          "name": "valor_financeiro_liquido",
+          "physicalName": "vl_financeiro_liquido",
+          "logicalType": "number",
+          "physicalType": "decimal(18,2)",
+          "required": true,
+          "businessName": "Valor Financeiro Líquido (R$)",
+          "description": "Montante liquidado em conta de custódia."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ontos
+  labels:
+    app.kubernetes.io/name: ontos
+    app.kubernetes.io/part-of: ontos-platform

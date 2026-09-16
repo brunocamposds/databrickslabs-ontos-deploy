@@ -1,0 +1,76 @@
+{
+  "title": "Bem-vindo ao {{appName}}",
+  "tagline": "Gerencie glossário de negócios, contratos de dados, produtos de dados, personas e muito mais",
+  "search": {
+    "placeholder": "Pesquisar produtos de dados, termos do glossário, contratos..."
+  },
+  "overview": {
+    "title": "Visão Geral",
+    "loading": "Carregando...",
+    "noData": "Nenhum dado de visão geral disponível para os recursos prévios selecionados ou para suas permissões.",
+    "error": "Erro",
+    "tiles": {
+      "compliance": {
+        "title": "Conformidade",
+        "description": "Pontuação atual de conformidade",
+        "notAvailable": "N/D"
+      },
+      "dataContracts": {
+        "title": "Contratos de Dados",
+        "description": "Contratos ativos"
+      },
+      "dataProducts": {
+        "title": "Produtos de Dados",
+        "description": "Total de produtos de dados"
+      },
+      "semanticModels": {
+        "title": "Navegador de Conceitos",
+        "description": "Modelos / Termos de Negócio"
+      },
+      "estates": {
+        "title": "Estates",
+        "description": "Nenhum estate configurado",
+        "lastSync": "Última sincronização: {{date}} ({{status}})",
+        "syncStatus": {
+          "success": "sucesso",
+          "failed": "falha",
+          "in_progress": "em andamento",
+          "unknown": "desconhecido"
+        }
+      }
+    }
+  },
+  "complianceTrend": {
+    "title": "Tendência de Conformidade",
+    "period": "Últimos 30 dias",
+    "loading": "Carregando dados de conformidade...",
+    "error": "Erro ao carregar dados de tendência: {{error}}",
+    "noData": "Nenhum dado de conformidade disponível para o período selecionado.",
+    "chartLabel": "Pontuação de Conformidade"
+  },
+  "noAccess": {
+    "message": "Atualmente você não possui um papel específico atribuído.",
+    "action": "Para acessar os recursos, por favor",
+    "link": "solicite acesso a um papel",
+    "contactAdmin": "Por favor, entre em contato com o administrador para solicitar acesso ao aplicativo."
+  },
+  "requestRoleSection": {
+    "title": "Papéis",
+    "cardTitle": "Papéis Disponíveis",
+    "description": "Você não tem papéis de aplicativo atribuídos no momento. Selecione um papel abaixo para solicitar acesso e começar.",
+    "info": "Após enviar a solicitação, um administrador irá analisá-la e você será notificado pelo sino de notificações.",
+    "noDescription": "Nenhuma descrição disponível",
+    "requestAccess": "Solicitar Acesso",
+    "moreRoles": "E mais {{count}} papel(is) disponível(is)..."
+  },
+  "quickActions": {
+    "title": "Ações Rápidas",
+    "loading": "Carregando...",
+    "noActions": "Nenhuma ação disponível.",
+    "actions": {
+      "explore": "Explorar Catálogo",
+      "browse": "Navegar por Produtos",
+      "create": "Criar Contrato"
+    }
+  }
+}
